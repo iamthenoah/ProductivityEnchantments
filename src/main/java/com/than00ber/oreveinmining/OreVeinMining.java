@@ -1,6 +1,7 @@
 package com.than00ber.oreveinmining;
 
 import com.than00ber.oreveinmining.enchantments.*;
+import com.than00ber.oreveinmining.enchantments.types.*;
 import com.than00ber.oreveinmining.events.BlockBreakHandler;
 import com.than00ber.oreveinmining.events.RightClickHandler;
 import net.minecraft.enchantment.Enchantment;
@@ -28,11 +29,12 @@ public class OreVeinMining {
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
 
-        public static final TerrainEnchantmentBase WOODCUTTING = new WoodcuttingEnchantment();
-        public static final TerrainEnchantmentBase CLUSTER = new ClusterEnchantment();
-        public static final TerrainEnchantmentBase DIGGING = new DiggingEnchantment();
-        public static final TerrainEnchantmentBase PLOWING = new PlowingEnchantment();
-        public static final _DebugEnchantment DEBUG = new _DebugEnchantment();
+        public static final CarverEnchantmentBase WOODCUTTING = new WoodcuttingEnchantment();
+        public static final CarverEnchantmentBase CLUSTER = new ClusterEnchantment();
+        public static final CarverEnchantmentBase DIGGING = new DiggingEnchantment();
+        public static final CarverEnchantmentBase PLOWING = new PlowingEnchantment();
+        public static final CarverEnchantmentBase FERTILITY = new FertilityEnchantment();
+        public static final ChunkEnchantment CHUNK = new ChunkEnchantment();
 
         @SubscribeEvent
         public static void onEnchantmentRegistry(final RegistryEvent.Register<Enchantment> event) {
@@ -41,7 +43,8 @@ public class OreVeinMining {
                     CLUSTER.setRegistryName(MODID, "cluster"),
                     DIGGING.setRegistryName(MODID, "digging"),
                     PLOWING.setRegistryName(MODID, "plowing"),
-                    DEBUG.setRegistryName(MODID, "debug")
+                    FERTILITY.setRegistryName(MODID, "fertility"),
+                    CHUNK.setRegistryName(MODID, "chunk")
             );
         }
     }

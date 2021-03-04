@@ -3,5 +3,6 @@
   "enchantment.oreveinmining.digging": "Digging",
   "enchantment.oreveinmining.woodcutting": "Woodcutting",
   "enchantment.oreveinmining.plowing": "Plowing",
-  "enchantment.oreveinmining.debug": "DO NOT USE"
+  "enchantment.oreveinmining.fertility": "Fertility",
+  "enchantment.oreveinmining.chunk": "Chunk (Creative only)"
 }
