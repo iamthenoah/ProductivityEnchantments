@@ -4,15 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
-import java.util.*;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -43,7 +41,7 @@ public class TerrainEnchantmentBase extends Enchantment {
         return false;
     }
 
-    public int getMaxRadius(int level) {
+    public int getMaxEffectiveRadius(int level) {
         return level + 1;
     }
 
@@ -56,9 +54,5 @@ public class TerrainEnchantmentBase extends Enchantment {
             if (state.isToolEffective(toolType))
                 return true;
         return false;
-    }
-
-    public void notifyPlayer(PlayerEntity player, String message) {
-        player.sendMessage(new StringTextComponent(message), UUID.randomUUID());
     }
 }

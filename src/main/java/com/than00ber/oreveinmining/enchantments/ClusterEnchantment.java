@@ -31,7 +31,7 @@ public class ClusterEnchantment extends TerrainEnchantmentBase {
     }
 
     @Override
-    public int getMaxRadius(int level) {
+    public int getMaxEffectiveRadius(int level) {
         return (int) Math.pow(3, level);
     }
 
@@ -45,7 +45,7 @@ public class ClusterEnchantment extends TerrainEnchantmentBase {
             return Double.compare(d1, d2);
         });
 
-        int startIndex = Math.min(cluster.size(), this.getMaxRadius(level));
+        int startIndex = Math.min(cluster.size(), this.getMaxEffectiveRadius(level));
         cluster.subList(startIndex, cluster.size()).clear();
 
         return new HashSet<>(cluster);

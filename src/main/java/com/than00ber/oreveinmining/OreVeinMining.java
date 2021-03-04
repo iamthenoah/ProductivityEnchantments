@@ -28,18 +28,18 @@ public class OreVeinMining {
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
 
+        public static final TerrainEnchantmentBase WOODCUTTING = new WoodcuttingEnchantment();
         public static final TerrainEnchantmentBase CLUSTER = new ClusterEnchantment();
         public static final TerrainEnchantmentBase DIGGING = new DiggingEnchantment();
-        public static final TerrainEnchantmentBase LUMBER = new LumberEnchantment();
         public static final TerrainEnchantmentBase PLOWING = new PlowingEnchantment();
         public static final _DebugEnchantment DEBUG = new _DebugEnchantment();
 
         @SubscribeEvent
         public static void onEnchantmentRegistry(final RegistryEvent.Register<Enchantment> event) {
             event.getRegistry().registerAll(
+                    WOODCUTTING.setRegistryName(MODID, "woodcutting"),
                     CLUSTER.setRegistryName(MODID, "cluster"),
                     DIGGING.setRegistryName(MODID, "digging"),
-                    LUMBER.setRegistryName(MODID, "lumber"),
                     PLOWING.setRegistryName(MODID, "plowing"),
                     DEBUG.setRegistryName(MODID, "debug")
             );

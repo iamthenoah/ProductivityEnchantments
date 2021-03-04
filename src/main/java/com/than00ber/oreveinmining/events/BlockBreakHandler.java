@@ -12,6 +12,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,17 +30,17 @@ public class BlockBreakHandler {
         for (Enchantment enchantment : enchantments.keySet()) {
 
             if (enchantment instanceof TerrainEnchantmentBase) {
-                TerrainEnchantmentBase modEnchantment = (TerrainEnchantmentBase) enchantment;
+                TerrainEnchantmentBase ench = (TerrainEnchantmentBase) enchantment;
 
                 if (!player.isSneaking() || !player.isCrouching()) {
                     BlockPos pos = event.getPos();
                     World world = (World) event.getWorld();
                     BlockState state = world.getBlockState(pos);
 
-                    if (modEnchantment.appliesToBlock(state)) {
+                    if (ench.appliesToBlock(state)) {
                         Block block = state.getBlock();
-                        int lvl = enchantments.get(modEnchantment);
-                        Set<BlockPos> cluster = modEnchantment.getBlocks(lvl, world, pos, block);
+                        int lvl = enchantments.get(ench);
+                        Set<BlockPos> cluster = ench.getBlocks(lvl, world, pos, block);
 
                         for (BlockPos blockPos : cluster) {
 
@@ -58,7 +59,7 @@ public class BlockBreakHandler {
                             world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
                         }
 
-                        modEnchantment.notifyPlayer(player, "Affected: " + cluster.size());
+                        player.sendMessage(new StringTextComponent("AFFECTED: " + cluster.size()), UUID.randomUUID());
                     }
                 }
             }

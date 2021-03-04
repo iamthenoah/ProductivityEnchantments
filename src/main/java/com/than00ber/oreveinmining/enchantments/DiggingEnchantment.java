@@ -1,7 +1,6 @@
 package com.than00ber.oreveinmining.enchantments;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,7 +22,7 @@ public class DiggingEnchantment extends TerrainEnchantmentBase {
 
     @Override
     public Set<BlockPos> getBlocks(Integer level, World world, BlockPos origin, Block original) {
-        int r = this.getMaxRadius(level);
+        int r = this.getMaxEffectiveRadius(level);
         Set<BlockPos> cluster = new HashSet<>();
 
         BlockPos start = new BlockPos(origin.getX() - r, origin.getY() - r, origin.getZ() - r);

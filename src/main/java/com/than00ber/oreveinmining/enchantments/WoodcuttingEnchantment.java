@@ -9,9 +9,9 @@ import net.minecraftforge.common.ToolType;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LumberEnchantment extends TerrainEnchantmentBase {
+public class WoodcuttingEnchantment extends TerrainEnchantmentBase {
 
-    public LumberEnchantment() {
+    public WoodcuttingEnchantment() {
         super(Rarity.COMMON, ToolType.AXE);
     }
 
