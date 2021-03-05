@@ -25,8 +25,10 @@ public class RightClickHandler {
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(heldItem);
 
         if (player instanceof ServerPlayerEntity) {
+            boolean hasPerformedCarvingAction = false;
 
             for (Enchantment enchantment : enchantments.keySet()) {
+                if (hasPerformedCarvingAction) return;
 
                 if (!player.isSneaking() || !player.isCrouching()) {
 
@@ -35,15 +37,18 @@ public class RightClickHandler {
                         BlockPos pos = event.getPos();
                         World world = event.getWorld();
                         Direction facing = event.getFace();
-
                         IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
-                        if (iRightClickEffect.isCreativeOnly() && !player.isCreative()) return;
+
+                        if (iRightClickEffect.isCreativeOnly() && !player.isCreative())
+                            return;
 
                         if (enchantment instanceof CarverEnchantmentBase) {
                             CarverEnchantmentBase carverEnchantmentBase = ((CarverEnchantmentBase) enchantment);
 
-                            if (carverEnchantmentBase.isTargetValid(world.getBlockState(pos), heldItem))
+                            if (carverEnchantmentBase.isTargetValid(world.getBlockState(pos), heldItem)) {
                                 iRightClickEffect.onRightClick(heldItem, lvl, facing, carverEnchantmentBase, world, pos, player);
+                                hasPerformedCarvingAction = true;
+                            }
                         }
                         else {
                             iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);

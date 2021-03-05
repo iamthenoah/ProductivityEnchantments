@@ -1,10 +1,7 @@
 package com.than00ber.oreveinmining.enchantments.types;
 
 import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.WallTorchBlock;
+import net.minecraft.block.*;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,8 +11,6 @@ import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import static net.minecraft.block.Blocks.WALL_TORCH;
 
 public class TorchingEnchantment extends Enchantment implements IRightClickEffect {
 
@@ -37,14 +32,13 @@ public class TorchingEnchantment extends Enchantment implements IRightClickEffec
 
             if (block == Blocks.AIR) {
                 BlockState state = world.getBlockState(origin);
-                BlockState torch = null;
+                Direction direction = facing.equals(Direction.DOWN) || facing.equals(Direction.UP)
+                        ? player.getHorizontalFacing().getOpposite() : facing;
+                BlockState torch = Blocks.TORCH.isValidPosition(state, world, origin) && facing.equals(Direction.UP)
+                        ? Blocks.TORCH.getDefaultState()
+                        : Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.HORIZONTAL_FACING, direction);
 
-                if (Blocks.TORCH.isValidPosition(state, world, origin))
-                    torch = Blocks.TORCH.getDefaultState();
-                else if (WALL_TORCH.isValidPosition(state, world, origin))
-                    torch = WALL_TORCH.getDefaultState().with(WallTorchBlock.HORIZONTAL_FACING, facing);
-
-                if (torch != null) world.setBlockState(current, torch);
+                world.setBlockState(current, torch);
             }
         }
     }
