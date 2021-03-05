@@ -1,46 +1,67 @@
 package com.than00ber.oreveinmining.enchantments.types;
 
 import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.ITerrainFormer;
+import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.block.CropsBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-public class FertilityEnchantment extends CarverEnchantmentBase implements ITerrainFormer {
+public class FertilityEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
 
     public FertilityEnchantment() {
-        super(Rarity.COMMON, ToolType.HOE);
+        super(Rarity.UNCOMMON, ToolType.HOE);
     }
 
     @Override
-    public boolean canApplyTogether(Enchantment enchantment) {
-        return super.canApplyTogether(enchantment) || enchantment instanceof PlowingEnchantment;
+    public boolean isTargetValid(BlockState state, ItemStack stack) {
+        return state.getBlock() == Blocks.FARMLAND;
     }
 
     @Override
-    public boolean isValidTargetBlockState(BlockState state, ItemStack stack) {
-        return super.isValidTargetBlockState(state, stack) && state.isIn(Tags.Blocks.DIRT);
+    public Set<BlockPos> getVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
+        Set<BlockPos> block = new HashSet<>();
+        block.add(origin);
+        return block;
     }
 
     @Override
-    public void transformBlock(ItemStack stack, int level, World world, BlockPos hit) {
-        if (world.getBlockState(hit).getBlock().isIn(Tags.Blocks.DIRT))
-            world.setBlockState(hit, Blocks.FARMLAND.getDefaultState());
-    }
+    public void onRightClick(ItemStack stack, int level, Direction facing, CarverEnchantmentBase enchantment, World world, BlockPos origin, PlayerEntity player) {
+        int radius = enchantment.getMaxEffectiveRadius(level);
+        Set<BlockPos> area = new HashSet<>();
+        BlockPos surface = origin.up();
 
-    @Override
-    public Set<BlockPos> getAffectedVolume(ItemStack stack, int radius, World world, BlockPos origin) {
-        Set<BlockPos> volume = super.getAffectedVolume(stack, radius, world, origin);
-//        System.out.println("BEFORE -> " + volume.size());
-        volume.removeIf(pos -> pos.getY() != origin.up().getY());
-//        System.out.println("AFTER ->  " + volume.size());
-        return volume;
+        BlockPos start = new BlockPos(surface.getX() - radius, surface.getY(), surface.getZ() - radius);
+        BlockPos finish = new BlockPos(surface.getX() + radius, surface.getY(), surface.getZ() + radius);
+
+        for (BlockPos current : BlockPos.getAllInBoxMutable(start, finish)) {
+            BlockPos pos = new BlockPos(current);
+            Block ground = world.getBlockState(pos.down()).getBlock();
+            Block above = world.getBlockState(pos).getBlock();
+
+            if (surface.withinDistance(pos, radius) && ground == Blocks.FARMLAND && above == Blocks.AIR)
+                area.add(pos);
+        }
+
+        System.out.println(area);
+
+        AtomicBoolean notBroken = new AtomicBoolean(true);
+
+        for (BlockPos blockPos : area) {
+            if (notBroken.get()) {
+                world.setBlockState(blockPos, Blocks.WHEAT.getDefaultState().with(CropsBlock.AGE, 7));
+                stack.damageItem(1, player, p -> notBroken.set(false));
+            }
+        }
     }
 }

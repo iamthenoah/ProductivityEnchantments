@@ -3,6 +3,9 @@
   "enchantment.oreveinmining.digging": "Digging",
   "enchantment.oreveinmining.woodcutting": "Woodcutting",
   "enchantment.oreveinmining.plowing": "Plowing",
+  "enchantment.oreveinmining.cultivation": "Cultivation",
   "enchantment.oreveinmining.fertility": "Fertility",
-  "enchantment.oreveinmining.chunk": "Chunk (Creative only)"
+  "enchantment.oreveinmining.magnetism": "Magnetism",
+  "enchantment.oreveinmining.torching": "Torching",
+  "enchantment.oreveinmining.chunk": "Chunk"
 }

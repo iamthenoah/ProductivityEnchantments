@@ -14,8 +14,13 @@ public class ClusterEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
+    public int getMaxLevel() {
+        return 1;
+    }
+
+    @Override
     public int getMaxEffectiveRadius(int level) {
-        return (int) Math.pow(3, level);
+        return 5;
     }
 
     @Override
@@ -24,7 +29,7 @@ public class ClusterEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public boolean isValidTargetBlockState(BlockState state, ItemStack stack) {
-        return super.isValidTargetBlockState(state, stack) && state.isIn(Tags.Blocks.ORES);
+    public boolean isTargetValid(BlockState state, ItemStack stack) {
+        return super.isTargetValid(state, stack) && state.isIn(Tags.Blocks.ORES) && state.isIn(Tags.Blocks.ORES_REDSTONE);
     }
 }

@@ -1,22 +1,20 @@
 package com.than00ber.oreveinmining.events;
 
 import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.ITerrainFormer;
-import net.minecraft.block.BlockState;
+import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class RightClickHandler {
 
@@ -31,35 +29,24 @@ public class RightClickHandler {
             for (Enchantment enchantment : enchantments.keySet()) {
 
                 if (!player.isSneaking() || !player.isCrouching()) {
-                    int lvl = enchantments.get(enchantment);
-                    BlockPos pos = event.getPos();
-                    World world = event.getWorld();
-                    BlockState state = world.getBlockState(pos);
 
-                    if (enchantment instanceof ITerrainFormer) {
-                        ITerrainFormer iTerrainFormer = (ITerrainFormer) enchantment;
+                    if (enchantment instanceof IRightClickEffect) {
+                        int lvl = enchantments.get(enchantment);
+                        BlockPos pos = event.getPos();
+                        World world = event.getWorld();
+                        Direction facing = event.getFace();
 
-                        if (iTerrainFormer.isCreativeOnly() && !player.isCreative())
-                            return;
+                        IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
+                        if (iRightClickEffect.isCreativeOnly() && !player.isCreative()) return;
 
                         if (enchantment instanceof CarverEnchantmentBase) {
-                            CarverEnchantmentBase ench = (CarverEnchantmentBase) enchantment;
+                            CarverEnchantmentBase carverEnchantmentBase = ((CarverEnchantmentBase) enchantment);
 
-                            if (ench.isValidTargetBlockState(state, heldItem)) {
-                                Set<BlockPos> area = ench.getAffectedVolume(heldItem, ench.getMaxEffectiveRadius(lvl), world, pos);
-                                AtomicBoolean notBroken = new AtomicBoolean(true);
-
-                                for (BlockPos blockPos : area) {
-
-                                    if (notBroken.get()) {
-                                        ((ITerrainFormer) ench).transformBlock(heldItem, lvl, world, blockPos);
-                                        heldItem.damageItem(1, player, p -> notBroken.set(true));
-                                    }
-                                }
-                            }
+                            if (carverEnchantmentBase.isTargetValid(world.getBlockState(pos), heldItem))
+                                iRightClickEffect.onRightClick(heldItem, lvl, facing, carverEnchantmentBase, world, pos, player);
                         }
                         else {
-                            iTerrainFormer.transformBlock(heldItem, lvl, world, pos);
+                            iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);
                         }
                     }
                 }

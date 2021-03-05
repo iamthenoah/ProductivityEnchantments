@@ -9,6 +9,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
@@ -17,6 +18,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
+
+import static com.than00ber.oreveinmining.OreVeinMining.RegistryEvents.MAGNETISM;
 
 public class BlockBreakHandler {
 
@@ -36,24 +39,26 @@ public class BlockBreakHandler {
                     World world = (World) event.getWorld();
                     BlockState state = world.getBlockState(pos);
 
-                    if (ench.isValidTargetBlockState(state, heldItem)) {
+                    if (ench.isTargetValid(state, heldItem)) {
                         int lvl = enchantments.get(ench);
                         Block block = state.getBlock();
 
-                        Set<BlockPos> cluster = ench.getAffectedVolume(heldItem, ench.getMaxEffectiveRadius(lvl), world, pos);
+                        Set<BlockPos> cluster = ench.getVolume(heldItem, lvl, ench, world, pos);
                         AtomicBoolean notBroken = new AtomicBoolean(true);
+                        boolean hasMagnetism = enchantments.get(MAGNETISM) != null;
 
                         for (BlockPos blockPos : cluster) {
 
                             if (notBroken.get()) {
 
                                 if (!player.isCreative()) {
-                                    BlockPos dropPos = ench.dropItemAtOrigin() ? pos : blockPos;
-                                    block.harvestBlock(world, player, dropPos, state, null, new ItemStack(block.asItem()));
+                                    BlockPos dropPos = hasMagnetism ? player.getPosition() : blockPos;
+                                    TileEntity te = world.getTileEntity(pos);
+                                    block.harvestBlock(world, player, dropPos, state, te, new ItemStack(block.asItem()));
                                 }
 
                                 world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
-                                heldItem.damageItem(1, player, p -> notBroken.set(true));
+                                heldItem.damageItem(1, player, p -> notBroken.set(false));
                             }
                         }
                     }
