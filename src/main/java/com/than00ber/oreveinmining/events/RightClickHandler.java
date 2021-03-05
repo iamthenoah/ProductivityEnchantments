@@ -9,6 +9,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -24,35 +25,37 @@ public class RightClickHandler {
         ItemStack heldItem = player.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(heldItem);
 
-        if (player instanceof ServerPlayerEntity) {
-            boolean hasPerformedCarvingAction = false;
+        boolean hasPerformedCarvingAction = false;
+        for (Enchantment enchantment : enchantments.keySet()) {
+            if (hasPerformedCarvingAction) return;
 
-            for (Enchantment enchantment : enchantments.keySet()) {
-                if (hasPerformedCarvingAction) return;
+            if (!player.isSneaking() || !player.isCrouching()) {
 
-                if (!player.isSneaking() || !player.isCrouching()) {
+                if (enchantment instanceof IRightClickEffect) {
+                    player.swingArm(Hand.MAIN_HAND);
 
-                    if (enchantment instanceof IRightClickEffect) {
-                        int lvl = enchantments.get(enchantment);
-                        BlockPos pos = event.getPos();
-                        World world = event.getWorld();
-                        Direction facing = event.getFace();
-                        IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
+                    int lvl = enchantments.get(enchantment);
+                    BlockPos pos = event.getPos();
+                    World world = event.getWorld();
+                    Direction facing = event.getFace();
+                    IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
 
-                        if (iRightClickEffect.isCreativeOnly() && !player.isCreative())
-                            return;
+                    if (iRightClickEffect.isCreativeOnly() && !player.isCreative())
+                        return;
 
-                        if (enchantment instanceof CarverEnchantmentBase) {
-                            CarverEnchantmentBase carverEnchantmentBase = ((CarverEnchantmentBase) enchantment);
+                    if (enchantment instanceof CarverEnchantmentBase) {
 
-                            if (carverEnchantmentBase.isTargetValid(world.getBlockState(pos), heldItem)) {
-                                iRightClickEffect.onRightClick(heldItem, lvl, facing, carverEnchantmentBase, world, pos, player);
+                        if (player instanceof ServerPlayerEntity) {
+                            CarverEnchantmentBase ceb = ((CarverEnchantmentBase) enchantment);
+
+                            if (ceb.isTargetValid(world.getBlockState(pos), heldItem)) {
+                                iRightClickEffect.onRightClick(heldItem, lvl, facing, ceb, world, pos, player);
                                 hasPerformedCarvingAction = true;
                             }
                         }
-                        else {
-                            iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);
-                        }
+                    }
+                    else {
+                        iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);
                     }
                 }
             }

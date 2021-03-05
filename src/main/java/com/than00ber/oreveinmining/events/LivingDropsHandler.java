@@ -24,13 +24,12 @@ public class LivingDropsHandler {
             ItemStack heldItem = player.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(heldItem);
 
-
             for (Enchantment enchantment : enchantments.keySet()) {
 
                 if (enchantment instanceof MagnetismEnchantment) {
 
                     for (ItemEntity drop : event.getDrops()) {
-                        player.entityDropItem(drop.getItem(), 10.0F);
+                        System.out.println(drop.getDisplayName());
                     }
                 }
             }
