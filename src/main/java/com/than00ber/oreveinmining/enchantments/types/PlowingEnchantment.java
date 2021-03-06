@@ -1,0 +1,64 @@
+package com.than00ber.oreveinmining.enchantments.types;
+
+import com.than00ber.oreveinmining.CarvedVolume;
+import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
+import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
+import com.than00ber.oreveinmining.IValidatorCallback;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropsBlock;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.ToolType;
+
+import java.util.*;
+
+import static com.than00ber.oreveinmining.OreVeinMining.RegistryEvents.PLOWING;
+
+public class PlowingEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
+
+    public PlowingEnchantment() {
+        super(Rarity.COMMON, ToolType.HOE);
+    }
+
+    @Override
+    public boolean canApplyTogether(Enchantment enchantment) {
+        if (enchantment instanceof CarverEnchantmentBase)
+            return ((CarverEnchantmentBase) enchantment).getToolType().equals(ToolType.HOE);
+        return super.canApplyTogether(enchantment);
+    }
+
+    @Override
+    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+        return IValidatorCallback.defaultCheck(state, stack, type) || state.isIn(Tags.Blocks.DIRT);
+    }
+
+    @Override
+    public Set<BlockPos> getRemoveVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
+        Set<BlockPos> block = new HashSet<>();
+        block.add(origin);
+        return block;
+    }
+
+    @Override
+    public void onRightClick(ItemStack stack, int level, Direction facing, CarverEnchantmentBase enchantment, World world, BlockPos origin, PlayerEntity player) {
+
+        if (!player.isSneaking() || !player.isCrouching()) {
+            int radius = enchantment.getMaxEffectiveRadius(level);
+
+            CarvedVolume area = new CarvedVolume(CarvedVolume.Shape.DISC, radius, origin, world)
+                    .setToolRestrictions(stack, PLOWING.getToolType())
+                    .filterViaCallback(PLOWING)
+                    .filterConnectedRecursively()
+                    .sortNearestToOrigin();
+
+            BlockState state = Blocks.FARMLAND.getDefaultState();
+            this.performPlacements(world, player, stack, area.getVolume(), state);
+        }
+    }
+}
