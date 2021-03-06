@@ -57,7 +57,7 @@ public class FertilityEnchantment extends CarverEnchantmentBase implements IRigh
                     .sortNearestToOrigin()
                     .shiftBy(0, 1, 0);
 
-            BlockState state = Blocks.WHEAT.getDefaultState().with(CropsBlock.AGE, 7);
+            BlockState state = Blocks.WHEAT.getDefaultState();
             this.performPlacements(world, player, stack, area.getVolume(), state);
         }
     }

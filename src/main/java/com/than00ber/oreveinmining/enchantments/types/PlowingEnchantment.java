@@ -7,6 +7,7 @@ import com.than00ber.oreveinmining.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
+import net.minecraft.block.FarmlandBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -57,7 +58,9 @@ public class PlowingEnchantment extends CarverEnchantmentBase implements IRightC
                     .filterConnectedRecursively()
                     .sortNearestToOrigin();
 
-            BlockState state = Blocks.FARMLAND.getDefaultState();
+            BlockState state = enchantment.getMaxLevel() == level
+                    ? Blocks.FARMLAND.getDefaultState().with(FarmlandBlock.MOISTURE, Collections.max(FarmlandBlock.MOISTURE.getAllowedValues()))
+                    : Blocks.FARMLAND.getDefaultState();
             this.performPlacements(world, player, stack, area.getVolume(), state);
         }
     }
