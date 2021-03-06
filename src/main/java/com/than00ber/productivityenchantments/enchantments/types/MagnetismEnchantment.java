@@ -1,4 +1,4 @@
-package com.than00ber.productivity_enchantments.enchantments.types;
+package com.than00ber.productivityenchantments.enchantments.types;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;

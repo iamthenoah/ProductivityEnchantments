@@ -1,7 +1,7 @@
-package com.than00ber.productivity_enchantments.events;
+package com.than00ber.productivityenchantments.events;
 
-import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
-import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivityenchantments.enchantments.IRightClickEffect;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;

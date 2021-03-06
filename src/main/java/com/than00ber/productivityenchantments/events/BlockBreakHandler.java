@@ -1,6 +1,6 @@
-package com.than00ber.productivity_enchantments.events;
+package com.than00ber.productivityenchantments.events;
 
-import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.MAGNETISM;
+import static com.than00ber.productivityenchantments.ProductivityEnchantments.RegistryEvents.MAGNETISM;
 
 public class BlockBreakHandler {
 

@@ -1,10 +1,10 @@
-package com.than00ber.productivity_enchantments;
+package com.than00ber.productivityenchantments;
 
-import com.than00ber.productivity_enchantments.enchantments.*;
-import com.than00ber.productivity_enchantments.enchantments.types.*;
-import com.than00ber.productivity_enchantments.events.BlockBreakHandler;
-import com.than00ber.productivity_enchantments.events.LivingDropsHandler;
-import com.than00ber.productivity_enchantments.events.RightClickHandler;
+import com.than00ber.productivityenchantments.enchantments.*;
+import com.than00ber.productivityenchantments.enchantments.types.*;
+import com.than00ber.productivityenchantments.events.BlockBreakHandler;
+import com.than00ber.productivityenchantments.events.LivingDropsHandler;
+import com.than00ber.productivityenchantments.events.RightClickHandler;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;

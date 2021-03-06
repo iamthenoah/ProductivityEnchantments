@@ -1,29 +1,27 @@
-package com.than00ber.productivity_enchantments.enchantments.types;
+package com.than00ber.productivityenchantments.enchantments.types;
 
-import com.than00ber.productivity_enchantments.CarvedVolume;
-import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
-import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
-import com.than00ber.productivity_enchantments.IValidatorCallback;
+import com.than00ber.productivityenchantments.CarvedVolume;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivityenchantments.enchantments.IRightClickEffect;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.FarmlandBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
-import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.PLOWING;
+import static com.than00ber.productivityenchantments.ProductivityEnchantments.RegistryEvents.FERTILITY;
 
-public class PlowingEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
+public class FertilityEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
 
-    public PlowingEnchantment() {
-        super(Rarity.COMMON, ToolType.HOE);
+    public FertilityEnchantment() {
+        super(Rarity.UNCOMMON, ToolType.HOE);
     }
 
     @Override
@@ -35,7 +33,7 @@ public class PlowingEnchantment extends CarverEnchantmentBase implements IRightC
 
     @Override
     public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
-        return IValidatorCallback.defaultCheck(state, stack, type) || state.isIn(Tags.Blocks.DIRT);
+        return state.getBlock() == Blocks.FARMLAND;
     }
 
     @Override
@@ -52,14 +50,13 @@ public class PlowingEnchantment extends CarverEnchantmentBase implements IRightC
             int radius = enchantment.getMaxEffectiveRadius(level);
 
             CarvedVolume area = new CarvedVolume(CarvedVolume.Shape.DISC, radius, origin, world)
-                    .setToolRestrictions(stack, PLOWING.getToolType())
-                    .filterViaCallback(PLOWING)
+                    .setToolRestrictions(stack, FERTILITY.getToolType())
+                    .filterViaCallback(FERTILITY)
                     .filterConnectedRecursively()
-                    .sortNearestToOrigin();
+                    .sortNearestToOrigin()
+                    .shiftBy(0, 1, 0);
 
-            BlockState state = enchantment.getMaxLevel() == level
-                    ? Blocks.FARMLAND.getDefaultState().with(FarmlandBlock.MOISTURE, Collections.max(FarmlandBlock.MOISTURE.getAllowedValues()))
-                    : Blocks.FARMLAND.getDefaultState();
+            BlockState state = Blocks.WHEAT.getDefaultState();
             this.performPlacements(world, player, stack, area.getVolume(), state);
         }
     }

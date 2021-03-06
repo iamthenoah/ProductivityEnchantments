@@ -1,7 +1,7 @@
-package com.than00ber.productivity_enchantments.enchantments.types;
+package com.than00ber.productivityenchantments.enchantments.types;
 
-import com.than00ber.productivity_enchantments.CarvedVolume;
-import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivityenchantments.CarvedVolume;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.enchantment.Enchantment;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.ToolType;
 import java.util.Collections;
 import java.util.Set;
 
-import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.CULTIVATION;
+import static com.than00ber.productivityenchantments.ProductivityEnchantments.RegistryEvents.CULTIVATION;
 
 public class CultivationEnchantment extends CarverEnchantmentBase {
 
