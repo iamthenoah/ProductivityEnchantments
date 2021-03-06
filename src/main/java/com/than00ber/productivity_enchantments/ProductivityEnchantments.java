@@ -1,10 +1,10 @@
-package com.than00ber.oreveinmining;
+package com.than00ber.productivity_enchantments;
 
-import com.than00ber.oreveinmining.enchantments.*;
-import com.than00ber.oreveinmining.enchantments.types.*;
-import com.than00ber.oreveinmining.events.BlockBreakHandler;
-import com.than00ber.oreveinmining.events.LivingDropsHandler;
-import com.than00ber.oreveinmining.events.RightClickHandler;
+import com.than00ber.productivity_enchantments.enchantments.*;
+import com.than00ber.productivity_enchantments.enchantments.types.*;
+import com.than00ber.productivity_enchantments.events.BlockBreakHandler;
+import com.than00ber.productivity_enchantments.events.LivingDropsHandler;
+import com.than00ber.productivity_enchantments.events.RightClickHandler;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,12 +12,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 
-@Mod(OreVeinMining.MODID)
-public class OreVeinMining {
+@Mod(ProductivityEnchantments.MODID)
+public class ProductivityEnchantments {
 
-    public static final String MODID = "oreveinmining";
+    public static final String MODID = "productivityenchantments";
 
-    public OreVeinMining() {
+    public ProductivityEnchantments() {
         MinecraftForge.EVENT_BUS.register(this);
     }
 

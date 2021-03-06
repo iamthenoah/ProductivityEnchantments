@@ -1,12 +1,11 @@
-package com.than00ber.oreveinmining.enchantments.types;
+package com.than00ber.productivity_enchantments.enchantments.types;
 
-import com.than00ber.oreveinmining.CarvedVolume;
-import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
-import com.than00ber.oreveinmining.IValidatorCallback;
+import com.than00ber.productivity_enchantments.CarvedVolume;
+import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
+import com.than00ber.productivity_enchantments.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CropsBlock;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +18,7 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.*;
 
-import static com.than00ber.oreveinmining.OreVeinMining.RegistryEvents.PLOWING;
+import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.PLOWING;
 
 public class PlowingEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
 

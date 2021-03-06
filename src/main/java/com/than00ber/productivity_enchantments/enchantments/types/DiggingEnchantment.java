@@ -1,7 +1,7 @@
-package com.than00ber.oreveinmining.enchantments.types;
+package com.than00ber.productivity_enchantments.enchantments.types;
 
-import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.IValidatorCallback;
+import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivity_enchantments.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;

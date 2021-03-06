@@ -1,11 +1,10 @@
-package com.than00ber.oreveinmining.enchantments.types;
+package com.than00ber.productivity_enchantments.enchantments.types;
 
-import com.than00ber.oreveinmining.CarvedVolume;
-import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
+import com.than00ber.productivity_enchantments.CarvedVolume;
+import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CropsBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -17,7 +16,7 @@ import net.minecraftforge.common.ToolType;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.than00ber.oreveinmining.OreVeinMining.RegistryEvents.FERTILITY;
+import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.FERTILITY;
 
 public class FertilityEnchantment extends CarverEnchantmentBase implements IRightClickEffect {
 

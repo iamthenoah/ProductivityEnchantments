@@ -14,8 +14,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
-group = 'com.than00ber.oreveinmining' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'oreveinmining'
+group = 'com.than00ber.productivityenchantments' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'productivityenchantments'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -44,7 +44,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                oreveinmining {
+                productivityenchantments {
                     source sourceSets.main
                 }
             }
@@ -60,7 +60,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                oreveinmining {
+                productivityenchantments {
                     source sourceSets.main
                 }
             }
@@ -75,11 +75,11 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            // Specify the oreveinmining for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'oreveinmining', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            // Specify the productivityenchantments for data generation, where to output the resulting resource, and where to look for existing resources.
+            args '--mod', 'productivityenchantments', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                oreveinmining {
+                productivityenchantments {
                     source sourceSets.main
                 }
             }
@@ -120,12 +120,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "oreveinmining",
+            "Specification-Title": "productivityenchantments",
             "Specification-Vendor": "IDKWIAD",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"oreveinminingsareus",
+            "Implementation-Vendor" :"productivityenchantments_sareus",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

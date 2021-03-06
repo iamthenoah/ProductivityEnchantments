@@ -1,7 +1,7 @@
-package com.than00ber.oreveinmining.enchantments;
+package com.than00ber.productivity_enchantments.enchantments;
 
-import com.than00ber.oreveinmining.CarvedVolume;
-import com.than00ber.oreveinmining.IValidatorCallback;
+import com.than00ber.productivity_enchantments.CarvedVolume;
+import com.than00ber.productivity_enchantments.IValidatorCallback;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.inventory.EquipmentSlotType;

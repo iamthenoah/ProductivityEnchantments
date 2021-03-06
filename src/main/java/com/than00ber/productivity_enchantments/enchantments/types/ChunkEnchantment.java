@@ -1,6 +1,6 @@
-package com.than00ber.oreveinmining.enchantments.types;
+package com.than00ber.productivity_enchantments.enchantments.types;
 
-import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
+import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;

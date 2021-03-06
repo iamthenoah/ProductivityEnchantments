@@ -1,8 +1,8 @@
-package com.than00ber.oreveinmining.enchantments.types;
+package com.than00ber.productivity_enchantments.enchantments.types;
 
-import com.than00ber.oreveinmining.CarvedVolume;
-import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.IValidatorCallback;
+import com.than00ber.productivity_enchantments.CarvedVolume;
+import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivity_enchantments.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.Set;
 
-import static com.than00ber.oreveinmining.OreVeinMining.RegistryEvents.WOODCUTTING;
+import static com.than00ber.productivity_enchantments.ProductivityEnchantments.RegistryEvents.WOODCUTTING;
 
 public class WoodcuttingEnchantment extends CarverEnchantmentBase {
 

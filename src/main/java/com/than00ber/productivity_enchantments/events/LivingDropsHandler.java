@@ -1,6 +1,6 @@
-package com.than00ber.oreveinmining.events;
+package com.than00ber.productivity_enchantments.events;
 
-import com.than00ber.oreveinmining.enchantments.types.MagnetismEnchantment;
+import com.than00ber.productivity_enchantments.enchantments.types.MagnetismEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.ItemEntity;

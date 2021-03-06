@@ -1,7 +1,7 @@
-package com.than00ber.oreveinmining.events;
+package com.than00ber.productivity_enchantments.events;
 
-import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
+import com.than00ber.productivity_enchantments.enchantments.CarverEnchantmentBase;
+import com.than00ber.productivity_enchantments.enchantments.IRightClickEffect;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,7 +9,6 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;

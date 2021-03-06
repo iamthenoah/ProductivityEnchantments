@@ -1,4 +1,4 @@
-package com.than00ber.oreveinmining;
+package com.than00ber.productivity_enchantments;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
