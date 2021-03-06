@@ -29,34 +29,26 @@ public class RightClickHandler {
         for (Enchantment enchantment : enchantments.keySet()) {
             if (hasPerformedCarvingAction) return;
 
-            if (!player.isSneaking() || !player.isCrouching()) {
+            if (enchantment instanceof IRightClickEffect) {
+                IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
+                int lvl = enchantments.get(enchantment);
+                BlockPos pos = event.getPos();
+                World world = event.getWorld();
+                Direction facing = event.getFace();
 
-                if (enchantment instanceof IRightClickEffect) {
-                    player.swingArm(Hand.MAIN_HAND);
+                if (enchantment instanceof CarverEnchantmentBase) {
 
-                    int lvl = enchantments.get(enchantment);
-                    BlockPos pos = event.getPos();
-                    World world = event.getWorld();
-                    Direction facing = event.getFace();
-                    IRightClickEffect iRightClickEffect = (IRightClickEffect) enchantment;
+                    if (player instanceof ServerPlayerEntity) {
+                        CarverEnchantmentBase ceb = ((CarverEnchantmentBase) enchantment);
 
-                    if (iRightClickEffect.isCreativeOnly() && !player.isCreative())
-                        return;
-
-                    if (enchantment instanceof CarverEnchantmentBase) {
-
-                        if (player instanceof ServerPlayerEntity) {
-                            CarverEnchantmentBase ceb = ((CarverEnchantmentBase) enchantment);
-
-                            if (ceb.isTargetValid(world.getBlockState(pos), heldItem)) {
-                                iRightClickEffect.onRightClick(heldItem, lvl, facing, ceb, world, pos, player);
-                                hasPerformedCarvingAction = true;
-                            }
+                        if (ceb.isBlockValid(world.getBlockState(pos), heldItem, ceb.getToolType())) {
+                            iRightClickEffect.onRightClick(heldItem, lvl, facing, ceb, world, pos, player);
+                            hasPerformedCarvingAction = true;
                         }
                     }
-                    else {
-                        iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);
-                    }
+                }
+                else {
+                    iRightClickEffect.onRightClick(heldItem, lvl, facing, world, pos, player);
                 }
             }
         }

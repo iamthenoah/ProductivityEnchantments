@@ -34,16 +34,16 @@ public class BlockBreakHandler {
             if (!player.isSneaking() || !player.isCrouching()) {
 
                 if (enchantment instanceof CarverEnchantmentBase) {
-                    CarverEnchantmentBase ench = (CarverEnchantmentBase) enchantment;
+                    CarverEnchantmentBase ceb = (CarverEnchantmentBase) enchantment;
                     BlockPos pos = event.getPos();
                     World world = (World) event.getWorld();
                     BlockState state = world.getBlockState(pos);
 
-                    if (ench.isBlockValid(state, heldItem, ench.TOOL_TYPE)) {
-                        int lvl = enchantments.get(ench);
+                    if (ceb.isBlockValid(state, heldItem, ceb.getToolType())) {
+                        int lvl = enchantments.get(ceb);
                         Block block = state.getBlock();
 
-                        Set<BlockPos> cluster = ench.getVolume(heldItem, lvl, ench, world, pos);
+                        Set<BlockPos> cluster = ceb.getRemoveVolume(heldItem, lvl, ceb, world, pos);
                         AtomicBoolean notBroken = new AtomicBoolean(true);
                         boolean hasMagnetism = enchantments.get(MAGNETISM) != null;
 

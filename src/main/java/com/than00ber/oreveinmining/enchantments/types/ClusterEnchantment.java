@@ -1,7 +1,9 @@
 package com.than00ber.oreveinmining.enchantments.types;
 
 import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
+import com.than00ber.oreveinmining.IValidatorCallback;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.OreBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Tags;
@@ -29,7 +31,7 @@ public class ClusterEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public boolean isTargetValid(BlockState state, ItemStack stack) {
-        return super.isTargetValid(state, stack) && state.isIn(Tags.Blocks.ORES) && state.isIn(Tags.Blocks.ORES_REDSTONE);
+    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+        return IValidatorCallback.defaultCheck(state, stack, type) && state.isIn(Tags.Blocks.ORES) || state.getBlock() instanceof OreBlock;
     }
 }

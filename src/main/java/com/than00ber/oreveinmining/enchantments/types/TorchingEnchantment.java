@@ -1,19 +1,25 @@
 package com.than00ber.oreveinmining.enchantments.types;
 
 import com.than00ber.oreveinmining.enchantments.IRightClickEffect;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.WallTorchBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
+
+import java.util.UUID;
 
 public class TorchingEnchantment extends Enchantment implements IRightClickEffect {
 
@@ -29,11 +35,13 @@ public class TorchingEnchantment extends Enchantment implements IRightClickEffec
     @Override
     public void onRightClick(ItemStack stack, int level, Direction facing, World world, BlockPos origin, PlayerEntity player) {
 
-        if (stack.getItem() instanceof PickaxeItem) {
+        if (player.isSneaking() || player.isCrouching()) {
             PlayerInventory inventory = player.inventory;
 
-            if (!inventory.hasItemStack(new ItemStack(Items.TORCH)) && !player.isCreative())
+            if (!inventory.hasItemStack(new ItemStack(Items.TORCH)) && !player.isCreative()) {
+                player.sendMessage(new StringTextComponent("You ran out of torches..."), UUID.randomUUID());
                 return;
+            }
 
             BlockPos current = origin.offset(facing);
             Block block = world.getBlockState(current).getBlock();
@@ -46,6 +54,7 @@ public class TorchingEnchantment extends Enchantment implements IRightClickEffec
                         ? Blocks.TORCH.getDefaultState()
                         : Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.HORIZONTAL_FACING, direction);
 
+                player.swingArm(Hand.MAIN_HAND);
                 world.setBlockState(current, torch);
             }
         }

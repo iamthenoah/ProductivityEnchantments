@@ -1,8 +1,8 @@
 package com.than00ber.oreveinmining.enchantments.types;
 
-import com.than00ber.oreveinmining.enchantments.CarvedVolume;
+import com.than00ber.oreveinmining.CarvedVolume;
 import com.than00ber.oreveinmining.enchantments.CarverEnchantmentBase;
-import com.than00ber.oreveinmining.enchantments.IValidatorCallback;
+import com.than00ber.oreveinmining.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
@@ -27,14 +27,13 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public Set<BlockPos> getVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
+    public Set<BlockPos> getRemoveVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
         BlockState state = world.getBlockState(origin);
         boolean isTreeLog = state.getBlock() instanceof RotatedPillarBlock;
         int radius = isTreeLog ? 32 : enchantment.getMaxEffectiveRadius(level);
 
         CarvedVolume volume = new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
-                .setToolRestrictionItem(stack)
-                .setToolRestrictionType(ToolType.AXE)
+                .setToolRestrictions(stack, WOODCUTTING.getToolType())
                 .filterViaCallback(WOODCUTTING);
 
         if (isTreeLog) {
@@ -51,8 +50,9 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
             volume.filterViaCallback(callback);
         }
 
-        volume.filterConnectedRecursively();
-
-        return volume.getVolume();
+        return volume
+                .filterConnectedRecursively()
+                .sortNearestToOrigin()
+                .getVolume();
     }
 }

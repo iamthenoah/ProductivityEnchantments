@@ -26,11 +26,6 @@ public class ChunkEnchantment extends Enchantment implements IRightClickEffect {
     }
 
     @Override
-    public boolean isCreativeOnly() {
-        return true;
-    }
-
-    @Override
     public boolean canApply(ItemStack stack) {
         return stack.getItem() == Items.STICK || stack.getItem() instanceof BlockItem;
     }

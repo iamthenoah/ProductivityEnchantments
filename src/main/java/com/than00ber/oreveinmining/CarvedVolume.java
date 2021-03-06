@@ -1,4 +1,4 @@
-package com.than00ber.oreveinmining.enchantments;
+package com.than00ber.oreveinmining;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -41,12 +42,8 @@ public class CarvedVolume {
         return this.VOLUME;
     }
 
-    public CarvedVolume setToolRestrictionItem(ItemStack stack) {
+    public CarvedVolume setToolRestrictions(ItemStack stack, ToolType type) {
         this.TOOL_RESTRICTION_ITEM = stack;
-        return this;
-    }
-
-    public CarvedVolume setToolRestrictionType(ToolType type) {
         this.TOOL_RESTRICTION_TYPE = type;
         return this;
     }
@@ -77,6 +74,20 @@ public class CarvedVolume {
         v.removeIf(pos -> !containsState == valid.contains(world.getBlockState(pos)));
 
         return new HashSet<>(v);
+    }
+
+    public CarvedVolume shiftBy(Vector3d vector) {
+        return this.shiftBy((int) vector.x, (int) vector.y, (int) vector.z);
+    }
+
+    public CarvedVolume shiftBy(int x, int y, int z) {
+
+        Set<BlockPos> newVol = new HashSet<>();
+        for (BlockPos pos : this.VOLUME)
+            newVol.add(pos.add(x, y, z));
+        this.VOLUME = newVol;
+
+        return this;
     }
 
     /**
