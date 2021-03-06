@@ -14,9 +14,9 @@ import net.minecraftforge.common.ToolType;
 
 import java.util.*;
 
-public class CarverEnchantmentBase extends Enchantment {
+public class CarverEnchantmentBase extends Enchantment implements IValidatorCallback {
 
-    protected final ToolType TOOL_TYPE;
+    public final ToolType TOOL_TYPE;
 
     protected CarverEnchantmentBase(Rarity rarity, ToolType type) {
         super(rarity, EnchantmentType.DIGGER, new EquipmentSlotType[] { EquipmentSlotType.MAINHAND });
