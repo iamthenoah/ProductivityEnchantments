@@ -2,11 +2,12 @@ package com.than00ber.oreveinmining.enchantments;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 import java.util.*;
 
@@ -15,7 +16,8 @@ public class CarvedVolume {
     private final BlockPos ORIGIN;
     private final World WORLD;
     private Set<BlockPos> VOLUME;
-    private ItemStack TOOL_RESTRICTION;
+    private ItemStack TOOL_RESTRICTION_ITEM;
+    private ToolType TOOL_RESTRICTION_TYPE;
 
     public CarvedVolume(Shape shape, int radius, BlockPos origin, World world) {
         this.ORIGIN = origin;
@@ -30,9 +32,7 @@ public class CarvedVolume {
         for (BlockPos pos : BlockPos.getAllInBoxMutable(p1, p2)) {
             BlockPos current = new BlockPos(pos);
 
-            if (shape.equals(Shape.SQUARE))
-                this.VOLUME.add(current);
-            else if (origin.withinDistance(current, radius))
+            if (shape.equals(Shape.SQUARE) || origin.withinDistance(current, radius))
                 this.VOLUME.add(current);
         }
     }
@@ -41,8 +41,13 @@ public class CarvedVolume {
         return this.VOLUME;
     }
 
-    public CarvedVolume setToolRestriction(ItemStack stack) {
-        this.TOOL_RESTRICTION = stack;
+    public CarvedVolume setToolRestrictionItem(ItemStack stack) {
+        this.TOOL_RESTRICTION_ITEM = stack;
+        return this;
+    }
+
+    public CarvedVolume setToolRestrictionType(ToolType type) {
+        this.TOOL_RESTRICTION_TYPE = type;
         return this;
     }
 
@@ -56,55 +61,50 @@ public class CarvedVolume {
     }
 
     public CarvedVolume filterBy(BlockState... states) {
-
-        List<BlockState> valid = Arrays.asList(states);
-        List<BlockPos> volume = new ArrayList<>(this.VOLUME);
-        volume.removeIf(pos -> !valid.contains(WORLD.getBlockState(pos)));
-        this.VOLUME = new HashSet<>(volume);
-
+        this.VOLUME = filter(true, this.VOLUME, this.WORLD, states);
         return this;
     }
 
-    public CarvedVolume filterBy(Tag<Block>... tags) {
-
-        List<Tag<Block>> valid = Arrays.asList(tags);
-        List<BlockPos> volume = new ArrayList<>(this.VOLUME);
-        for (Tag<Block> tag : tags) volume.removeIf(pos -> !WORLD.getBlockState(pos).isIn(tag));
-        this.VOLUME = new HashSet<>(volume);
-
+    public CarvedVolume filterOut(BlockState... states) {
+        this.VOLUME = filter(false, this.VOLUME, this.WORLD, states);
         return this;
+    }
+
+    private static Set<BlockPos> filter(boolean containsState, Set<BlockPos> volume, World world, BlockState... states) {
+
+        List<BlockState> valid = Arrays.asList(states);
+        List<BlockPos> v = new ArrayList<>(volume);
+        v.removeIf(pos -> !containsState == valid.contains(world.getBlockState(pos)));
+
+        return new HashSet<>(v);
     }
 
     /**
      * Filters through implemented validation callback.
-     * Make sure to call CarvedVolume#setToolRestriction before performing
-     * this filtering.
+     * Make sure to call CarvedVolume#setToolRestrictionItem and
+     * CarvedVolume#setToolRestrictionType before performing filtering.
      *
      * @param callback validation callback
      * @return instance
      */
-    public CarvedVolume filterBy(IValidatorCallback callback) {
+    public CarvedVolume filterViaCallback(IValidatorCallback callback) {
 
-        if (this.TOOL_RESTRICTION == null) {
-            throw new IllegalArgumentException("Cannot perform block filtering validation without any tool restrictions set.");
-        }
+        if (this.TOOL_RESTRICTION_ITEM == null || this.TOOL_RESTRICTION_TYPE == null)
+            throw new IllegalArgumentException("Cannot perform block filtering validation without tool restrictions set.");
 
         List<BlockPos> volume = new ArrayList<>(this.VOLUME);
-        volume.removeIf(pos -> !callback.isBlockValid(this.WORLD.getBlockState(pos), this.TOOL_RESTRICTION, ((CarverEnchantmentBase) callback).TOOL_TYPE));
+        volume.removeIf(pos -> !callback.isBlockValid(this.WORLD.getBlockState(pos), this.TOOL_RESTRICTION_ITEM, this.TOOL_RESTRICTION_TYPE));
         this.VOLUME = new HashSet<>(volume);
 
         return this;
     }
 
     public CarvedVolume filterConnectedRecursively() {
-
-        Block original = this.WORLD.getBlockState(this.ORIGIN).getBlock();
-        this.VOLUME = filterRecursively(this.WORLD, this.ORIGIN, original, this.VOLUME, new HashSet<>());
-
+        this.VOLUME = filterRecursively(this.ORIGIN, this.VOLUME, new HashSet<>());
         return this;
     }
 
-    private static Set<BlockPos> filterRecursively(World world, BlockPos origin, Block original, Set<BlockPos> volume, Set<BlockPos> cluster) {
+    private Set<BlockPos> filterRecursively(BlockPos origin, Set<BlockPos> volume, Set<BlockPos> cluster) {
         cluster.add(origin);
 
         if (cluster.size() < volume.size() && cluster.size() < 2048) {
@@ -112,13 +112,39 @@ public class CarvedVolume {
 
             for (Direction direction : Direction.values()) {
                 BlockPos current = origin.offset(direction);
-                Block block = world.getBlockState(current).getBlock();
+                Block block = this.WORLD.getBlockState(current).getBlock();
 
-                if (!cluster.contains(current) && volume.contains(current) && block.equals(original))
+                if (!cluster.contains(current) && volume.contains(current) && block != Blocks.AIR)
                     branch.add(current);
             }
 
-            branch.forEach(pos -> cluster.addAll(filterRecursively(world, pos, original, volume, cluster)));
+            branch.forEach(pos -> cluster.addAll(filterRecursively(pos, volume, cluster)));
+        }
+
+        return cluster;
+    }
+
+    public CarvedVolume filterConnectedRecursively(BlockState... states) {
+        this.VOLUME = filterRecursivelyFromState(this.ORIGIN, this.VOLUME, new HashSet<>(), states);
+        return this;
+    }
+
+    private Set<BlockPos> filterRecursivelyFromState(BlockPos origin, Set<BlockPos> volume, Set<BlockPos> cluster, BlockState... states) {
+        cluster.add(origin);
+
+        List<BlockState> valid = Arrays.asList(states);
+        if (cluster.size() < volume.size() && cluster.size() < 2048) {
+            Set<BlockPos> branch = new HashSet<>();
+
+            for (Direction direction : Direction.values()) {
+                BlockPos current = origin.offset(direction);
+                BlockState state = this.WORLD.getBlockState(current);
+
+                if (!cluster.contains(current) && volume.contains(current) && valid.contains(state))
+                    branch.add(current);
+            }
+
+            branch.forEach(pos -> cluster.addAll(filterRecursivelyFromState(pos, volume, cluster, states)));
         }
 
         return cluster;
