@@ -3,13 +3,13 @@ package com.than00ber.productivityenchantments.enchantments.types;
 import com.than00ber.productivityenchantments.CarvedVolume;
 import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import com.than00ber.productivityenchantments.enchantments.IRightClickEffect;
-import com.than00ber.productivityenchantments.IValidatorCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -34,8 +34,8 @@ public class PlowingEnchantment extends CarverEnchantmentBase implements IRightC
     }
 
     @Override
-    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
-        return IValidatorCallback.defaultCheck(state, stack, type) || state.isIn(Tags.Blocks.DIRT);
+    public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
+        return state.isIn(Tags.Blocks.DIRT) && world.getBlockState(pos.up()).getBlock() == Blocks.AIR;
     }
 
     @Override
@@ -60,6 +60,7 @@ public class PlowingEnchantment extends CarverEnchantmentBase implements IRightC
             BlockState state = enchantment.getMaxLevel() == level
                     ? Blocks.FARMLAND.getDefaultState().with(FarmlandBlock.MOISTURE, Collections.max(FarmlandBlock.MOISTURE.getAllowedValues()))
                     : Blocks.FARMLAND.getDefaultState();
+
             this.performPlacements(world, player, stack, area.getVolume(), state);
         }
     }

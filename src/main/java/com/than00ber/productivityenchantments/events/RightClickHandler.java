@@ -8,7 +8,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -36,11 +38,12 @@ public class RightClickHandler {
                 Direction facing = event.getFace();
 
                 if (enchantment instanceof CarverEnchantmentBase) {
+                    CarverEnchantmentBase ceb = ((CarverEnchantmentBase) enchantment);
 
-                    if (player instanceof ServerPlayerEntity) {
-                        CarverEnchantmentBase ceb = ((CarverEnchantmentBase) enchantment);
+                    if (ceb.isBlockValid(world.getBlockState(pos), world, pos, heldItem, ceb.getToolType())) {
+                        player.swingArm(Hand.MAIN_HAND);
 
-                        if (ceb.isBlockValid(world.getBlockState(pos), heldItem, ceb.getToolType())) {
+                        if (player instanceof ServerPlayerEntity) {
                             iRightClickEffect.onRightClick(heldItem, lvl, facing, ceb, world, pos, player);
                             hasPerformedCarvingAction = true;
                         }

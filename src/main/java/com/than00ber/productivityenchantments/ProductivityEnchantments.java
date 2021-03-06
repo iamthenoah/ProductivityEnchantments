@@ -57,31 +57,3 @@ public class ProductivityEnchantments {
         }
     }
 }
-
-
-
-//    public enum ToolRestrictionType {
-//
-//        SHOVEL(ToolType.SHOVEL, Tags.Blocks.DIRT, Tags.Blocks.SAND, Tags.Blocks.GRAVEL),
-//        AXE(ToolType.AXE, Tags.Blocks.FENCES_WOODEN, Tags.Blocks.FENCE_GATES_WOODEN),
-//        PICKAXE(ToolType.PICKAXE, Tags.Blocks.ORES, Tags.Blocks.ORES_NETHERITE_SCRAP, Tags.Blocks.ORES_REDSTONE);
-//
-//        public final ToolType TOOL_TYPE;
-//        private final List<Tags.IOptionalNamedTag<Block>> VALID_BLOCKS;
-//
-//        public boolean canApplyToItem(ItemStack stack) {
-//            return stack.getToolTypes().contains(TOOL_TYPE);
-//        }
-//
-//        public boolean canBreakBlock(Block block) {
-//            for (ResourceLocation tag : block.getTags())
-//                if (VALID_BLOCKS.contains(tag)) return true;
-//            return false;
-//        }
-//
-//        @SafeVarargs
-//        ToolRestrictionType(ToolType type, Tags.IOptionalNamedTag<Block>... tags) {
-//            TOOL_TYPE = type;
-//            VALID_BLOCKS = Arrays.asList(tags);
-//        }
-//    }

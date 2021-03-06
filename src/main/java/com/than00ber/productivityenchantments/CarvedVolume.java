@@ -9,8 +9,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
+import org.lwjgl.system.CallbackI;
 
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class CarvedVolume {
 
@@ -104,7 +107,7 @@ public class CarvedVolume {
             throw new IllegalArgumentException("Cannot perform block filtering validation without tool restrictions set.");
 
         List<BlockPos> volume = new ArrayList<>(this.VOLUME);
-        volume.removeIf(pos -> !callback.isBlockValid(this.WORLD.getBlockState(pos), this.TOOL_RESTRICTION_ITEM, this.TOOL_RESTRICTION_TYPE));
+        volume.removeIf(pos -> !callback.isBlockValid(this.WORLD.getBlockState(pos), this.WORLD, pos, this.TOOL_RESTRICTION_ITEM, this.TOOL_RESTRICTION_TYPE));
         this.VOLUME = new HashSet<>(volume);
 
         return this;

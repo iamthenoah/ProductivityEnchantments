@@ -7,6 +7,8 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 public class DiggingEnchantment extends CarverEnchantmentBase {
@@ -26,7 +28,7 @@ public class DiggingEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+    public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
         boolean isRocky = (stack.canHarvestBlock(state) || state.isToolEffective(type)) && stack.getItem() instanceof PickaxeItem;
         boolean isDirty = (stack.canHarvestBlock(state) || state.isToolEffective(type)) && stack.getItem() instanceof ShovelItem;
         return IValidatorCallback.defaultCheck(state, stack, type) && isRocky || isDirty;

@@ -2,11 +2,13 @@ package com.than00ber.productivityenchantments;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 public interface IValidatorCallback {
 
-    default boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+    default boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
         return defaultCheck(state, stack, type);
     }
 

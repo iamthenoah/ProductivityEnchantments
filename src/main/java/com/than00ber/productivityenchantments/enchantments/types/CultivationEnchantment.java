@@ -29,8 +29,8 @@ public class CultivationEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
-        return state.getBlock() instanceof CropsBlock && state.get(CropsBlock.AGE) >= Collections.max(CropsBlock.AGE.getAllowedValues());
+    public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
+        return state.getBlock() instanceof CropsBlock && state.get(CropsBlock.AGE).equals(Collections.max(CropsBlock.AGE.getAllowedValues()));
     }
 
     @Override

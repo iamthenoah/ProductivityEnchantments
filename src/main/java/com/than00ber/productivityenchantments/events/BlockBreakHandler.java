@@ -39,7 +39,7 @@ public class BlockBreakHandler {
                     World world = (World) event.getWorld();
                     BlockState state = world.getBlockState(pos);
 
-                    if (ceb.isBlockValid(state, heldItem, ceb.getToolType())) {
+                    if (ceb.isBlockValid(state, world, pos, heldItem, ceb.getToolType())) {
                         int lvl = enchantments.get(ceb);
                         Block block = state.getBlock();
 

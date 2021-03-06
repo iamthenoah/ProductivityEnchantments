@@ -22,7 +22,7 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
     }
 
     @Override
-    public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+    public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
         return state.isToolEffective(type) || state.getBlock() instanceof LeavesBlock;
     }
 
@@ -42,7 +42,7 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
         else {
             IValidatorCallback callback = new IValidatorCallback() {
                 @Override
-                public boolean isBlockValid(BlockState state, ItemStack stack, ToolType type) {
+                public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
                     return !(state.getBlock() instanceof RotatedPillarBlock);
                 }
             };
