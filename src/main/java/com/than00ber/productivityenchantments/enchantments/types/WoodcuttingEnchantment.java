@@ -48,12 +48,9 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
                 }
             };
 
-            volume.filterViaCallback(callback);
+            volume.filterViaCallback(callback).filterConnectedRecursively();
         }
 
-        return volume
-                .filterConnectedRecursively()
-                .sortNearestToOrigin()
-                .getVolume();
+        return volume.sortNearestToOrigin().getVolume();
     }
 }

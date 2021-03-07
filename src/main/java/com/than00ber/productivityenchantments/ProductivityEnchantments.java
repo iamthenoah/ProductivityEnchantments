@@ -3,7 +3,7 @@ package com.than00ber.productivityenchantments;
 import com.than00ber.productivityenchantments.enchantments.*;
 import com.than00ber.productivityenchantments.enchantments.types.*;
 import com.than00ber.productivityenchantments.events.BlockBreakHandler;
-import com.than00ber.productivityenchantments.events.LivingDropsHandler;
+import com.than00ber.productivityenchantments.events.LivingKilledHandler;
 import com.than00ber.productivityenchantments.events.RightClickHandler;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,7 +25,7 @@ public class ProductivityEnchantments {
     public void onServerStarting(FMLServerStartingEvent event) {
         MinecraftForge.EVENT_BUS.register(new BlockBreakHandler());
         MinecraftForge.EVENT_BUS.register(new RightClickHandler());
-        MinecraftForge.EVENT_BUS.register(new LivingDropsHandler());
+        MinecraftForge.EVENT_BUS.register(new LivingKilledHandler());
     }
 
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)

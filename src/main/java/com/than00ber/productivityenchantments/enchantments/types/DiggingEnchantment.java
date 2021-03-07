@@ -38,30 +38,35 @@ public class DiggingEnchantment extends CarverEnchantmentBase {
 
     @Override
     public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
-        boolean isRocky = (stack.canHarvestBlock(state) || state.isToolEffective(type)) && stack.getItem() instanceof PickaxeItem;
-        boolean isDirty = (stack.canHarvestBlock(state) || state.isToolEffective(type)) && stack.getItem() instanceof ShovelItem;
-        return isRocky || isDirty;
+        boolean harvestable = state.isToolEffective(type) || stack.canHarvestBlock(state);
+
+        if (stack.getItem() instanceof PickaxeItem) {
+            boolean isClusterSpecific = CLUSTER.isBlockValid(state, world, pos, stack, type);
+            return !isClusterSpecific && harvestable;
+        }
+
+        return stack.getItem() instanceof ShovelItem && harvestable;
     }
 
     @Override
     public Set<BlockPos> getRemoveVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
         int radius = enchantment.getMaxEffectiveRadius(level);
+        IValidatorCallback callback = DIGGING;
 
-        IValidatorCallback callback = new IValidatorCallback() {
-            @Override
-            public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
-                boolean isOre = state.isIn(Tags.Blocks.ORES) || state.getBlock() instanceof OreBlock;
-                return stack.canHarvestBlock(state.getBlockState()) && !isOre;
-            }
-        };
+        if (stack.getItem() instanceof PickaxeItem) {
+            callback = new IValidatorCallback() {
+                @Override
+                public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
+                    return !(state.isIn(Tags.Blocks.ORES) || state.getBlock() instanceof OreBlock);
+                }
+            };
+        }
 
-
-        CarvedVolume area = new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
+        return new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
                 .setToolRestrictions(stack, enchantment.getToolType())
                 .filterViaCallback(callback)
                 .filterConnectedRecursively()
-                .sortNearestToOrigin();
-
-        return area.getVolume();
+                .sortNearestToOrigin()
+                .getVolume();
     }
 }

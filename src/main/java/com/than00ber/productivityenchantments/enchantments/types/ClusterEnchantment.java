@@ -40,16 +40,18 @@ public class ClusterEnchantment extends CarverEnchantmentBase {
     @Override
     public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
         boolean isOre = state.isIn(Tags.Blocks.ORES) || state.getBlock() instanceof OreBlock;
-        return IValidatorCallback.defaultCheck(state, stack, type) && isOre;
+        return stack.canHarvestBlock(state) && isOre;
     }
 
     @Override
     public Set<BlockPos> getRemoveVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
         int radius = enchantment.getMaxEffectiveRadius(level);
+        BlockState ore = world.getBlockState(origin);
 
         return new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
                 .setToolRestrictions(stack, enchantment.getToolType())
                 .filterViaCallback(CLUSTER)
+                .filterBy(ore)
                 .filterConnectedRecursively()
                 .sortNearestToOrigin()
                 .getVolume();

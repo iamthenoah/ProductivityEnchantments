@@ -38,24 +38,41 @@ public class TorchingEnchantment extends Enchantment implements IRightClickEffec
         if (player.isSneaking() || player.isCrouching()) {
             PlayerInventory inventory = player.inventory;
 
-            if (!inventory.hasItemStack(new ItemStack(Items.TORCH)) && !player.isCreative()) {
-                player.sendMessage(new StringTextComponent("You ran out of torches..."), UUID.randomUUID());
-                return;
+            if (inventory.hasItemStack(new ItemStack(Items.TORCH)) || player.isCreative()) {
+                BlockPos current = origin.offset(facing);
+                Block block = world.getBlockState(current).getBlock();
+
+                if (block == Blocks.AIR) {
+                    BlockState state = world.getBlockState(current);
+
+                    Direction direction = facing.equals(Direction.DOWN) || facing.equals(Direction.UP)
+                            ? player.getHorizontalFacing().getOpposite() : facing;
+
+                    BlockState torch = null;
+
+                    if (Blocks.TORCH.isValidPosition(state, world, current)) {
+                        torch = Blocks.TORCH.getDefaultState();
+                    }
+                    else {
+                        BlockState wallTorch = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.HORIZONTAL_FACING, direction);
+
+                        if (Blocks.WALL_TORCH.isValidPosition(wallTorch, world, current))
+                            torch = wallTorch;
+                    }
+
+                    if (torch != null) {
+                        player.swingArm(Hand.MAIN_HAND);
+                        world.setBlockState(current, torch);
+
+                        if (!player.isCreative()) {
+                            int inSlot = inventory.getSlotFor(new ItemStack(Items.TORCH));
+                            inventory.decrStackSize(inSlot, 1);
+                        }
+                    }
+                }
             }
-
-            BlockPos current = origin.offset(facing);
-            Block block = world.getBlockState(current).getBlock();
-
-            if (block == Blocks.AIR) {
-                BlockState state = world.getBlockState(current);
-                Direction direction = facing.equals(Direction.DOWN) || facing.equals(Direction.UP)
-                        ? player.getHorizontalFacing().getOpposite() : facing;
-                BlockState torch = Blocks.TORCH.isValidPosition(state, world, origin) && facing.equals(Direction.UP)
-                        ? Blocks.TORCH.getDefaultState()
-                        : Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.HORIZONTAL_FACING, direction);
-
-                player.swingArm(Hand.MAIN_HAND);
-                world.setBlockState(current, torch);
+            else {
+                player.sendMessage(new StringTextComponent("You ran out of torches..."), UUID.randomUUID());
             }
         }
     }

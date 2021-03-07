@@ -90,6 +90,7 @@ public class FertilityEnchantment extends CarverEnchantmentBase implements IRigh
 
             AtomicBoolean notBroken = new AtomicBoolean(true);
             List<BlockPos> surface = new ArrayList<>(area.getVolume());
+
             int inSlot = block instanceof CropsBlock
                     ? inventory.getSlotFor(new ItemStack(Items.BONE_MEAL))
                     : inventory.getSlotFor(new ItemStack(Items.WHEAT_SEEDS));
@@ -120,9 +121,7 @@ public class FertilityEnchantment extends CarverEnchantmentBase implements IRigh
                     if (notBroken.get()) {
                         BlockPos blockPos = surface.get(i);
                         world.setBlockState(blockPos, seed);
-
-                        if (i % 2 == 0)
-                            heldItem.damageItem(1, player, p -> notBroken.set(false));
+                        if (i % 2 == 0) heldItem.damageItem(1, player, p -> notBroken.set(false));
                     }
                     else {
                         return;
