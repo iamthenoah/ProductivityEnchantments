@@ -79,6 +79,10 @@ public class CarvedVolume {
         return new HashSet<>(v);
     }
 
+    public CarvedVolume shiftBy(Vector3d vector) {
+        return this.shiftBy((int) vector.x, (int) vector.y, (int) vector.z);
+    }
+
     public CarvedVolume shiftBy(int x, int y, int z) {
 
         Set<BlockPos> newVol = new HashSet<>();
@@ -134,13 +138,11 @@ public class CarvedVolume {
         return cluster;
     }
 
-    @Deprecated
     public CarvedVolume filterConnectedRecursively(BlockState... states) {
         this.VOLUME = filterRecursivelyFromState(this.ORIGIN, this.VOLUME, new HashSet<>(), states);
         return this;
     }
 
-    @Deprecated
     private Set<BlockPos> filterRecursivelyFromState(BlockPos origin, Set<BlockPos> volume, Set<BlockPos> cluster, BlockState... states) {
         cluster.add(origin);
 
