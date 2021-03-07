@@ -6,14 +6,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
-import org.lwjgl.system.CallbackI;
 
 import java.util.*;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class CarvedVolume {
 

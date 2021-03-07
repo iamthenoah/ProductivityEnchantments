@@ -1,8 +1,8 @@
 package com.than00ber.productivityenchantments.enchantments.types;
 
 import com.than00ber.productivityenchantments.CarvedVolume;
-import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import com.than00ber.productivityenchantments.IValidatorCallback;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.LeavesBlock;

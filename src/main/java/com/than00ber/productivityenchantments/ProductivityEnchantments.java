@@ -1,6 +1,6 @@
 package com.than00ber.productivityenchantments;
 
-import com.than00ber.productivityenchantments.enchantments.*;
+import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import com.than00ber.productivityenchantments.enchantments.types.*;
 import com.than00ber.productivityenchantments.events.BlockBreakHandler;
 import com.than00ber.productivityenchantments.events.LivingKilledHandler;
