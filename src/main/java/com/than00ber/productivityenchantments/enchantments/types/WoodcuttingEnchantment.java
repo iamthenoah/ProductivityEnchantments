@@ -32,7 +32,6 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
         BlockState state = world.getBlockState(origin);
         boolean isTreeLog = state.getBlock() instanceof RotatedPillarBlock;
         int radius = isTreeLog ? 32 : enchantment.getMaxEffectiveRadius(level);
-
         CarvedVolume volume = new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
                 .setToolRestrictions(stack, WOODCUTTING.getToolType())
                 .filterViaCallback(WOODCUTTING);
@@ -48,12 +47,10 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
                 }
             };
 
-            volume.filterViaCallback(callback);
+            volume.filterViaCallback(callback).filterConnectedRecursively();
         }
 
-        return volume
-                .filterConnectedRecursively()
-                .sortNearestToOrigin()
+        return volume.sortNearestToOrigin()
                 .getVolume();
     }
 }

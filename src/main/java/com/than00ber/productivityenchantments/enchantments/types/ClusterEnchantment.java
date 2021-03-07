@@ -46,10 +46,12 @@ public class ClusterEnchantment extends CarverEnchantmentBase {
     @Override
     public Set<BlockPos> getRemoveVolume(ItemStack stack, int level, CarverEnchantmentBase enchantment, World world, BlockPos origin) {
         int radius = enchantment.getMaxEffectiveRadius(level);
+        BlockState ore = world.getBlockState(origin);
 
         return new CarvedVolume(CarvedVolume.Shape.SPHERICAL, radius, origin, world)
                 .setToolRestrictions(stack, enchantment.getToolType())
                 .filterViaCallback(CLUSTER)
+                .filterBy(ore)
                 .filterConnectedRecursively()
                 .sortNearestToOrigin()
                 .getVolume();
