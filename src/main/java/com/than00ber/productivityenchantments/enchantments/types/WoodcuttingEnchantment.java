@@ -4,6 +4,7 @@ import com.than00ber.productivityenchantments.CarvedVolume;
 import com.than00ber.productivityenchantments.enchantments.CarverEnchantmentBase;
 import com.than00ber.productivityenchantments.IValidatorCallback;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.item.ItemStack;
@@ -23,7 +24,7 @@ public class WoodcuttingEnchantment extends CarverEnchantmentBase {
 
     @Override
     public boolean isBlockValid(BlockState state, World world, BlockPos pos, ItemStack stack, ToolType type) {
-        return state.isToolEffective(type) || state.getBlock() instanceof LeavesBlock;
+        return state.isToolEffective(type) || state.getBlock() instanceof LeavesBlock && !(state.getBlock() instanceof IGrowable);
     }
 
     @Override

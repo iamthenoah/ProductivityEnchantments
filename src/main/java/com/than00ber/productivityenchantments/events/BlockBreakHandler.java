@@ -29,7 +29,9 @@ public class BlockBreakHandler {
         ItemStack heldItem = player.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(heldItem);
 
+        boolean hasPerformedCarvingAction = false;
         for (Enchantment enchantment : enchantments.keySet()) {
+            if (hasPerformedCarvingAction) return;
 
             if (!player.isSneaking() || !player.isCrouching()) {
 
@@ -57,6 +59,7 @@ public class BlockBreakHandler {
                                     block.harvestBlock(world, player, dropPos, state, te, new ItemStack(block.asItem()));
                                 }
 
+                                hasPerformedCarvingAction = true;
                                 world.setBlockState(blockPos, Blocks.AIR.getDefaultState());
                                 heldItem.damageItem(1, player, p -> notBroken.set(false));
                             }
