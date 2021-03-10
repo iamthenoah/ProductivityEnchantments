@@ -8,77 +8,35 @@ Enchantmenets
 
 ### Cluster (rare) (pickaxe)
 
-_Mines complete ore veins_ Breaking an ore-type block will mine a bunch of its connected ores of the same type -- if there are iron and coal veins next to each other and you break the iron ore, you will get only the iron ore and vice versa. The pick will be damaged according to how many block is destroyed.
+Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
-### Digging (I, II, III)
+### Digging (I, II, III) (uncommon) (pickaxe, shovel)
 
-_Digs an area of blocks_
+Carves an area of blocks. The radius depends on the enchantment level.
 
-**Rarity**: _UNCOMMON_
+### Torching (uncommon) (pickaxe)
 
-**Tools**: Pickaxe, Shovel
+Useful when mining. When enchanted, torches can be placed upon right click. 
 
-**Description**: Depending on the enchantment's level, breaking a block will be dig out an area of a certain radius. Only tools that are effectivly on the block will carve and area. In other words, breaking a dirt block with a Pickaxe with Digging III applied will not carve an area. 
+### Woodcutting (I, II, III) (common) (axe)
 
-### Torching (I)
+Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
 
-_Place a torch on shift-rightclick_
+### Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)
 
-**Rarity**: _UNCOMMON_
+Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
-**Tools**: Pickaxe (may change in the future)
+### Plowing (I, II, III) (common) (hoe)
 
-**Description**: When mining, it can be quite unintresting to switch between the pickaxe and the torches to explore the caves but with Torching, you can now place torches down dirrectly from the tool.
+Plows an area into farmland. Max enchantment will also fully moisturize fields.
 
-### Woodcutting (I, II, III)
+### Fertility (I, II, III) (common) (hoe)
 
-_Cut down entire trees_
+Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
-**Rarity**: _COMMON_
+### Cultivation (I, II, III) (uncommon) (hoe)
 
-**Tools**: Axe
-
-**Description**: This is the Axe equivalent of Digging. In addition from breaking an area of wood/leave-type blocks, this enchantments cuts enitre trees at the cost of durabilty.
-
-### Magnetism (I)
-
-_Attracts any droped items directly to you_
-
-**Rarity**: _VERY RARE_
-
-**Tools**: Pickaxe, Shovel, Axe, Bow, Crossbow, Sword
-
-**Description**: When killing or destroying a block with this enchantment applied, the drops will spawn dirrectly on you. Useful for mining over lava or killing flying blazes.
-
-### Plowing (I, II, III)
-
-_Plows an area into farmland_
-
-**Rarity**: COMMON
-
-**Tools**: Hoe
-
-**Desription**: Instead of just transforming a dirt/grass block into farmland, this enchanmtent will transform an area into farmland at the cost of durabilty. When max enchantment is appied, plowed fields are also going to be fully moisturized.
-
-### Fertility (I, II, III)
-
-_Fertilizes farmland with seeds & grows seeds with bone meal_
-
-**Rarity**: COMMON
-
-**Tools**: Hoe
-
-**Description**: Perhaps the most useful farming enchantment, this provides a two funcionalities. The first being able to plant seeds and secondly, grow crops with bone meal. This however affects the tool's durabilty (this can be changed within the mod's config).
-
-### Cultivation (I, II, III)
-
-_Harvests fully grown crops_
-
-**Rarity**: UNCOMMON
-
-**Tools**: Hoe
-
-**Description**: Breaks fully grown crops of that type within an area of a certain radius depending on the enchantment's level.
+Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
 FAQ
 
