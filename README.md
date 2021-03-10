@@ -6,7 +6,7 @@ As the name suggests, this mod adds 8 simple enchantments aiming at increasing y
 Enchantmenets
 ------------------
 
-* #### Cluster (I)
+### Cluster (I)
 
 _Mines ore veins_
 
@@ -16,7 +16,7 @@ _Mines ore veins_
 
 **Descritpion**: Breaking an ore-type block will mine a bunch of its connected ores of the same type  -- if there is iron and coal veins next to each other and you break the iron ore, you will get only the iron ore and vice versa. The pick will be damaged according to how many block is destroyed.
 
-#### Digging (I, II, III)
+### Digging (I, II, III)
 
 _Digs an area of blocks_
 
@@ -26,7 +26,7 @@ _Digs an area of blocks_
 
 **Description**: Depending on the enchantment's level, breaking a block will be dig out an area of a certain radius. Only tools that are effectivly on the block will carve and area. In other words, breaking a dirt block with a Pickaxe with Digging III applied will not carve an area. 
 
-#### Torching (I)
+### Torching (I)
 
 _Place a torch on shift-rightclick_
 
@@ -36,7 +36,7 @@ _Place a torch on shift-rightclick_
 
 **Description**: When mining, it can be quite unintresting to switch between the pick and the torches to explore the caves but with Torching, you can now place torches down dirrectly from the tool.
 
-#### Woodcutting (I, II, III)
+### Woodcutting (I, II, III)
 
 _Cut down entire trees_
 
@@ -46,7 +46,7 @@ _Cut down entire trees_
 
 **Description**: This is the Axe equivalent of Digging. In addition from breaking an area of wood/leave-type blocks, this enchantments cuts enitre trees at the cost of durabilty.
 
-#### Magnetism (I)
+### Magnetism (I)
 
 _Attracts any droped items directly to you_
 
@@ -56,6 +56,6 @@ _Attracts any droped items directly to you_
 
 **Description**: When killing or destroying a block with this enchantment applied, the drops will spawn dirrectly on you. Useful for mining over lava or killing flying blazes.
 
-#### Plowing (I, II)
+### Plowing (I, II)
 
 
