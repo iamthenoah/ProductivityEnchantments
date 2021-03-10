@@ -53,3 +53,5 @@ Feel free to you use this mod however you like (please infrom me of any issues/i
 As it stands, if I have the time, I may be able to work on other versions such as 1.12.2. Please leave a comment on which version you would like this mod to be available in.
 
 #### Feel free to suggest anything in the comments section.
+
+#### Dont's forget to check out the mod's configs to adjust things to your liking.
