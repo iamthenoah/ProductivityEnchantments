@@ -38,8 +38,18 @@ Allows seeds to be planted or bone meal to be fed on crops over an area upon rig
 
 Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
-FAQ
+## FAQ
 
-Mod compatibility?
-As far as I now, apart from planting seeds, 
+### Mod compatibility?
 
+As far as I know (apart from planting seeds with Fertility), enchantments are cross compatibile with other mods.
+
+### Can I use it in my Modpack?
+
+Feel free to you use this mod however you like (please infrom me of any issues/incompatibilties).
+
+### Will this mod be available in other versions?
+
+As it stands, if I have the time, I may be able to work on other versions such as 1.12.2. Please leave a comment on which version you would like this mod to be available in.
+
+#### Feel free to suggest anything in the comments section.
