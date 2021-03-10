@@ -1,20 +1,14 @@
 Productivity Enchantments
 ==================
 
-As the name suggests, this mod adds 8 simple enchantments aiming at increasing your productivity by help you complete tedious tasks a bit faster while not being too _overpowered_. From helping you gather ores faster to farming with more ease, this mod aims at playing the game that much more satisfying.
+As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like farming and mining faster while not being too _overpowered_. 
 
 Enchantmenets
 ------------------
 
-### Cluster (I)
+### Cluster (rare) (pickaxe)
 
-_Mines ore veins_
-
-**Rarity**: _RARE_
-
-**Tools**: Pickaxe
-
-**Descritpion**: Breaking an ore-type block will mine a bunch of its connected ores of the same type  -- if there is iron and coal veins next to each other and you break the iron ore, you will get only the iron ore and vice versa. The pick will be damaged according to how many block is destroyed.
+_Mines complete ore veins_ Breaking an ore-type block will mine a bunch of its connected ores of the same type -- if there are iron and coal veins next to each other and you break the iron ore, you will get only the iron ore and vice versa. The pick will be damaged according to how many block is destroyed.
 
 ### Digging (I, II, III)
 
@@ -85,4 +79,9 @@ _Harvests fully grown crops_
 **Tools**: Hoe
 
 **Description**: Breaks fully grown crops of that type within an area of a certain radius depending on the enchantment's level.
+
+FAQ
+
+Mod compatibility?
+As far as I now, apart from planting seeds, 
 
