@@ -28,7 +28,7 @@ Attracts any droped items directly to you. Your best friend for mining over lava
 
 ### Plowing (I, II, III) (common) (hoe)
 
-Plows an area into farmland. Max enchantment will also fully moisturize fields.
+Plows an area into farmland. Max enchantment will also fully moisturize fields. The radius depends on the enchantment level.
 
 ### Fertility (I, II, III) (common) (hoe)
 
