@@ -4,8 +4,17 @@
 As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like farming and mining faster while not being too _overpowered_. 
 
 Enchantments
-------------------
+---------------
 
+<hr>
+
+<img src="pi.png" align="right" width="30px" height="auto">
+
+### Cluster (rare)
+
+Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
+
+<hr>
 
 <img src="pi.png" align="right" width="30px" height="auto">
 <img src="sh.png" align="right" width="30px" height="auto">
@@ -13,62 +22,75 @@ Enchantments
 <img src="ho.png" align="right" width="30px" height="auto">
 <img src="sw.png" align="right" width="30px" height="auto">
 
-
-### Cluster (rare) (pickaxe)
-
-Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
-
-<hr>
-
-### Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)
+### Magnetism (very rare)
 
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
 <hr>
 
-### Digging (I, II, III) (uncommon) (pickaxe, shovel)
+<img src="pi.png" align="right" width="30px" height="auto">
+<img src="sh.png" align="right" width="30px" height="auto">
+
+### Digging (I, II, III) (uncommon)
 
 Carves an area of blocks. The radius depends on the enchantment level.
 
 <hr>
 
-### Torching (uncommon) (pickaxe)
+<img src="pi.png" align="right" width="30px" height="auto">
+
+### Torching (uncommon)
 
 Useful when mining. When enchanted, torches can be placed upon right click. 
 
 <hr>
 
-### Woodcutting (I, II, III) (common) (axe)
+<img src="ax.png" align="right" width="30px" height="auto">
+
+### Woodcutting (I, II, III) (common)
 
 Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
 
 <hr>
 
-### Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)
+<img src="pi.png" align="right" width="30px" height="auto">
+<img src="sh.png" align="right" width="30px" height="auto">
+<img src="ax.png" align="right" width="30px" height="auto">
+<img src="ho.png" align="right" width="30px" height="auto">
+<img src="sw.png" align="right" width="30px" height="auto">
+
+### Magnetism (very rare)
 
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
 <hr>
 
-### Plowing (I, II, III) (common) (hoe)
+<img src="ho.png" align="right" width="30px" height="auto">
+
+### Plowing (I, II, III) (common)
 
 Plows an area into farmland. Max enchantment will also fully moisturize fields. The radius depends on the enchantment level.
 
 <hr>
 
-### Fertility (I, II, III) (common) (hoe)
+<img src="ho.png" align="right" width="30px" height="auto">
+
+### Fertility (I, II, III) (common)
 
 Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
 <hr>
 
-### Cultivation (I, II, III) (uncommon) (hoe)
+<img src="ho.png" align="right" width="30px" height="auto">
+
+### Cultivation (I, II, III) (uncommon)
 
 Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
 
 
-## FAQ
+FAQ
+---------------
 
 ### Mod compatibility?
 
