@@ -1,9 +1,9 @@
-Productivity Enchantments
-==================
+
+![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/Asset%202.png)
 
 As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like farming and mining faster while not being too _overpowered_. 
 
-Enchantmenets
+Enchantments
 ------------------
 
 ### Cluster (rare) (pickaxe)
