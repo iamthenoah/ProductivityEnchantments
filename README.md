@@ -6,8 +6,6 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ---------------
 
-<hr>
-
 <img src="pi.png" align="right" width="30px" height="auto">
 
 ### Cluster (rare)
