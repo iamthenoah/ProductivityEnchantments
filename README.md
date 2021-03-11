@@ -10,7 +10,6 @@ Enchantments
 
 <br><br>
 
-
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
 <hr>
