@@ -7,11 +7,12 @@ Enchantments
 ------------------
 
 ### Cluster (rare) (pickaxe)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/pi.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ax.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sh.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ho.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sw.png)
+
+<img src="pi.png" alt="" width="30px%" height="auto">
+<img src="sh.png" alt="" width="30px%" height="auto">
+<img src="ax.png" alt="" width="30px%" height="auto">
+<img src="ho.png" alt="" width="30px%" height="auto">
+<img src="psw.png" alt="" width="30px%" height="auto">
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
