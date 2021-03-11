@@ -6,7 +6,6 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ------------------
 
-### Cluster (rare) (pickaxe)
 
 <img src="pi.png" align="right" width="30px" height="auto">
 <img src="sh.png" align="right" width="30px" height="auto">
@@ -14,7 +13,8 @@ Enchantments
 <img src="ho.png" align="right" width="30px" height="auto">
 <img src="sw.png" align="right" width="30px" height="auto">
 
-<br><br>
+
+### Cluster (rare) (pickaxe)
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
