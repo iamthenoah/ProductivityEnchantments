@@ -6,7 +6,7 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ------------------
 
-![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/Asset%204.png)
+![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/Asset%203.png)
 
 **Rarity**: RARE
 
