@@ -8,6 +8,8 @@ Enchantments
 
 ![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/Asset%204.png)
 
+**Rarity**: RARE
+
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
 ### Digging (I, II, III) (uncommon) (pickaxe, shovel)
