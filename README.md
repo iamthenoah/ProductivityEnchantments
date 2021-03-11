@@ -6,12 +6,9 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ------------------
 
-### Cluster (rare) (pickaxe)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/pi.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ax.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sh.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ho.png)
-![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sw.png)
+### Cluster (rare) (pickaxe)<img src="pi.png" align="left" width="30px" height="auto"><img src="sh.png" align="left" width="30px" height="auto"><img src="ax.png" align="left" width="30px" height="auto"><img src="ho.png" align="left" width="30px" height="auto"><img src="sw.png" align="left" width="30px" height="auto">
+
+<br><br>
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
