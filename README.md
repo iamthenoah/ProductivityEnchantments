@@ -6,7 +6,13 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ------------------
 
-### Cluster (rare) (pickaxe)<img src="pi.png" align="left" width="30px" height="auto"><img src="sh.png" align="left" width="30px" height="auto"><img src="ax.png" align="left" width="30px" height="auto"><img src="ho.png" align="left" width="30px" height="auto"><img src="sw.png" align="left" width="30px" height="auto">
+### Cluster (rare) (pickaxe)
+
+<img src="pi.png" align="right" width="30px" height="auto">
+<img src="sh.png" align="right" width="30px" height="auto">
+<img src="ax.png" align="right" width="30px" height="auto">
+<img src="ho.png" align="right" width="30px" height="auto">
+<img src="sw.png" align="right" width="30px" height="auto">
 
 <br><br>
 
