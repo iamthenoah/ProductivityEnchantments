@@ -8,7 +8,7 @@ Enchantments
 
 <img src="pi.png" align="right" width="30px" height="auto">
 
-### Cluster (rare)
+### - Cluster (rare)
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
@@ -20,7 +20,7 @@ Simply mines complete veins of the same ore type. Bigger veins have a greater im
 <img src="ho.png" align="right" width="30px" height="auto">
 <img src="sw.png" align="right" width="30px" height="auto">
 
-### Magnetism (very rare)
+### - Magnetism (very rare)
 
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
@@ -29,7 +29,7 @@ Attracts any droped items directly to you. Your best friend for mining over lava
 <img src="pi.png" align="right" width="30px" height="auto">
 <img src="sh.png" align="right" width="30px" height="auto">
 
-### Digging (I, II, III) (uncommon)
+### - Digging (I, II, III) (uncommon)
 
 Carves an area of blocks. The radius depends on the enchantment level.
 
@@ -37,7 +37,7 @@ Carves an area of blocks. The radius depends on the enchantment level.
 
 <img src="pi.png" align="right" width="30px" height="auto">
 
-### Torching (uncommon)
+### - Torching (uncommon)
 
 Useful when mining. When enchanted, torches can be placed upon right click. 
 
@@ -45,7 +45,7 @@ Useful when mining. When enchanted, torches can be placed upon right click.
 
 <img src="ax.png" align="right" width="30px" height="auto">
 
-### Woodcutting (I, II, III) (common)
+### - Woodcutting (I, II, III) (common)
 
 Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
 
@@ -57,7 +57,7 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 <img src="ho.png" align="right" width="30px" height="auto">
 <img src="sw.png" align="right" width="30px" height="auto">
 
-### Magnetism (very rare)
+### - Magnetism (very rare)
 
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
@@ -65,7 +65,7 @@ Attracts any droped items directly to you. Your best friend for mining over lava
 
 <img src="ho.png" align="right" width="30px" height="auto">
 
-### Plowing (I, II, III) (common)
+### - Plowing (I, II, III) (common)
 
 Plows an area into farmland. Max enchantment will also fully moisturize fields. The radius depends on the enchantment level.
 
@@ -73,7 +73,7 @@ Plows an area into farmland. Max enchantment will also fully moisturize fields. 
 
 <img src="ho.png" align="right" width="30px" height="auto">
 
-### Fertility (I, II, III) (common)
+### - Fertility (I, II, III) (common)
 
 Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
@@ -81,7 +81,7 @@ Allows seeds to be planted or bone meal to be fed on crops over an area upon rig
 
 <img src="ho.png" align="right" width="30px" height="auto">
 
-### Cultivation (I, II, III) (uncommon)
+### - Cultivation (I, II, III) (uncommon)
 
 Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
