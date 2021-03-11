@@ -6,45 +6,58 @@ As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increa
 Enchantments
 ------------------
 
-![Cluster (rare) (pickaxe)](https://github.com/noahgreff/ProductivityEnchantments/blob/master/1.png)
+### Cluster (rare) (pickaxe)
+![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/pi.png)
+![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ax.png)
+![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sh.png)
+![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/ho.png)
+![](https://github.com/noahgreff/ProductivityEnchantments/blob/master/sw.png)
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
-
-![Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)](https://github.com/noahgreff/ProductivityEnchantments/blob/master/2.png) 
-
-Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
-
-
-### Digging (I, II, III) (uncommon) (pickaxe, shovel)
-
-Carves an area of blocks. The radius depends on the enchantment level.
-
-
-### Torching (uncommon) (pickaxe)
-
-Useful when mining. When enchanted, torches can be placed upon right click. 
-
-
-### Woodcutting (I, II, III) (common) (axe)
-
-Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
-
+<hr>
 
 ### Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)
 
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
+<hr>
+
+### Digging (I, II, III) (uncommon) (pickaxe, shovel)
+
+Carves an area of blocks. The radius depends on the enchantment level.
+
+<hr>
+
+### Torching (uncommon) (pickaxe)
+
+Useful when mining. When enchanted, torches can be placed upon right click. 
+
+<hr>
+
+### Woodcutting (I, II, III) (common) (axe)
+
+Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
+
+<hr>
+
+### Magnetism (very rare) (bow, crossbow, sword, pickaxe, axe, shovel, hoe)
+
+Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
+
+<hr>
 
 ### Plowing (I, II, III) (common) (hoe)
 
 Plows an area into farmland. Max enchantment will also fully moisturize fields. The radius depends on the enchantment level.
 
+<hr>
 
 ### Fertility (I, II, III) (common) (hoe)
 
 Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
+<hr>
 
 ### Cultivation (I, II, III) (uncommon) (hoe)
 
