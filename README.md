@@ -1,7 +1,7 @@
 
 ![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/_productvity%20logo.jpg)
 
-As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like farming and gathering while not being too _overpowered_. 
+As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like **farming**, **mining** and even **terraforming** while not being too *overpowered*. 
 
 Enchantments
 ---------------
