@@ -8,11 +8,11 @@ Enchantments
 
 ### Cluster (rare) (pickaxe)
 
-<img src="pi.png" alt="" width="30px%" height="auto">
-<img src="sh.png" alt="" width="30px%" height="auto">
-<img src="ax.png" alt="" width="30px%" height="auto">
-<img src="ho.png" alt="" width="30px%" height="auto">
-<img src="psw.png" alt="" width="30px%" height="auto">
+<img src="pi.png" alt="" style="display: inline; position: relative;" width="30px%" height="auto">
+<img src="sh.png" alt="" style="display: inline; position: relative;" width="30px%" height="auto">
+<img src="ax.png" alt="" style="display: inline; position: relative;" width="30px%" height="auto">
+<img src="ho.png" alt="" style="display: inline; position: relative;" width="30px%" height="auto">
+<img src="sw.png" alt="" style="display: inline; position: relative;" width="30px%" height="auto">
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
