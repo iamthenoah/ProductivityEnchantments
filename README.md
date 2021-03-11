@@ -1,14 +1,12 @@
 
-![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/productivity-enchantment-mod.png)
+![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/productivity-enchantment.png)
 
 As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by help you complete tedious tasks like farming and mining faster while not being too _overpowered_. 
 
 Enchantments
 ------------------
 
-![alt text](https://github.com/noahgreff/ProductivityEnchantments/blob/master/Asset%203.png)
-
-**Rarity**: RARE
+### Cluster (rare) (pickaxe)
 
 Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
 
