@@ -125,7 +125,7 @@ Absolutely, please reach out to me in private!
 
 ### Where can I submit issues/bug reports?
 
-Do not report in the comment section directly. Rather, report them here: https://github.com/Than00ber/ProductivityEnchantments/issues. Provide game version, froge version and, if any, crash logs and a description of what the problem is, this helps a lot. 
+Do not report in the comment section directly, report them here: https://github.com/Than00ber/ProductivityEnchantments/issues. Provide game version, froge version and, crash logs (if any) and a description of what the problem is. 
 
 
 <br>
