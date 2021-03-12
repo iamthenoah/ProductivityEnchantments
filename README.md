@@ -47,7 +47,7 @@ Places a torch down upon right click. Useful when mining.
 
 <img src="assets/icons/ax.png" align="right" width="30px" height="auto">
 
-### Woodcutting (I, II, III) (common)
+### Woodcutting (I, II, III)
 
 **Rarity**: COMMON
 
