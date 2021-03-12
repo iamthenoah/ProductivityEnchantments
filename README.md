@@ -13,7 +13,7 @@ Enchantments
 
 ### Cluster (rare)
 
-Simply mines complete veins of the same ore type. Bigger veins have a greater impact on durability. 
+Simply mines entire veins of the same ore type. Bigger veins have greater impact on durability. 
 
 <hr>
 
@@ -30,7 +30,7 @@ Carves an area of blocks. The radius depends on the enchantment level.
 
 ### Torching (uncommon)
 
-Useful when mining. When enchanted, torches can be placed upon right click. 
+Places a torch down upon right click. Useful when mining. 
 
 <hr>
 
