@@ -123,16 +123,19 @@ As it stands, if I have the time, I may be able to work on other versions such a
 
 Absolutely, please reach out to me in private!
 
+### Where can I submit issues/bug reports?
+
+Do not report in the comment section directly. Rather, report them here: https://github.com/Than00ber/ProductivityEnchantments/issues. Provide game version, froge version and, if any, crash logs and a description of what the problem is, this helps a lot. 
 
 
 <br>
-
 
 
 ## Extra
 
 
 #### Supports *JEI Enchantment Info*
+
 #### Supported Languages:
 
 * English
@@ -141,5 +144,3 @@ Absolutely, please reach out to me in private!
 #### Feel free to suggest anything in the comments section.
 
 #### Don't forget to check out the mod's configs to adjust things to your liking.
-
-#### Please infrom me of any issues here: https://github.com/Than00ber/ProductivityEnchantments/issues. Provide game version, froge version and, if any, crash logs and a description of what the problem is, this helps a lot. 
