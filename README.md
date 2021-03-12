@@ -112,7 +112,7 @@ As far as I know (apart from planting seeds with Fertility), enchantments are cr
 
 ### Can I use it in my Modpack?
 
-Feel free to you use this mod however you like.
+Yes, Feel free to you use this mod however you like.
 
 
 ### Will this mod be available in other versions?
