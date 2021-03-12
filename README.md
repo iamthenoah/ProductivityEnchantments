@@ -1,5 +1,6 @@
 
-![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/assets/title.png)
+![Productivity Enchantments Mod](https://i.ibb.co/XScrS2Z/title.png)
+
 
 
 <br>
