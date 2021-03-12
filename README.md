@@ -67,7 +67,7 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 
 **Rarity**: VERY RARE
 
-Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
+Attracts any dropped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
 <hr>
 
@@ -95,7 +95,7 @@ Allows seeds to be planted or bone meal to be fed on crops over an area upon rig
 
 ### Cultivation (I, II, III)
 
-**Rarity**: UNCOMMON
+**Rarity**: COMMON
 
 Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
