@@ -1,12 +1,12 @@
 
 ![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/assets/title.png)
 
+
 <br>
 
 <p align="center">
-    As the title suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like <b>farming</b>, <b>mining</b> and even <b>terraforming</b> while not being too <i>overpowered</i>. 
+    As the title suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like <b>farming</b>, <b>mining</b> and even <b>terraforming</b> while being as balanced as possible to fit the game's theme.
 </p>
-
 
 
 <br></br><img src="assets/enchantments.png" width="100%" height="auto">
@@ -15,7 +15,9 @@
 
 <img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 
-### Cluster (rare)
+### Cluster
+
+**Rarity**: RARE
 
 Simply mines entire veins of the same ore type. Bigger veins have greater impact on durability. 
 
@@ -24,7 +26,9 @@ Simply mines entire veins of the same ore type. Bigger veins have greater impact
 <img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 <img src="assets/icons/sh.png" align="right" width="30px" height="auto">
 
-### Digging (I, II, III) (uncommon)
+### Digging (I, II, III)
+
+**Rarity**: UNCOMMON
 
 Carves an area of blocks. The radius depends on the enchantment level.
 
@@ -32,7 +36,9 @@ Carves an area of blocks. The radius depends on the enchantment level.
 
 <img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 
-### Torching (uncommon)
+### Torching
+
+**Rarity**: UNCOMMON
 
 Places a torch down upon right click. Useful when mining. 
 
@@ -41,6 +47,8 @@ Places a torch down upon right click. Useful when mining.
 <img src="assets/icons/ax.png" align="right" width="30px" height="auto">
 
 ### Woodcutting (I, II, III) (common)
+
+**Rarity**: COMMON
 
 Cuts down entire trees. This enchantment also behaves like digging on all wood-type blocks.
 
@@ -54,15 +62,18 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 <img src="assets/icons/bo.png" align="right" width="30px" height="auto">
 <img src="assets/icons/cr.png" align="right" width="30px" height="auto">
 
-### Magnetism (very rare)
+### Magnetism
 
+**Rarity**: VERY RARE
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
 <hr>
 
 <img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
-### Plowing (I, II, III) (common)
+### Plowing (I, II, III)
+
+**Rarity**: COMMON
 
 Plows an area into farmland. Max enchantment will also fully moisturize fields. The radius depends on the enchantment level.
 
@@ -70,15 +81,18 @@ Plows an area into farmland. Max enchantment will also fully moisturize fields. 
 
 <img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
-### Fertility (I, II, III) (common)
+### Fertility (I, II, III)
 
+**Rarity**: COMMON
 Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
 <hr>
 
 <img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
-### Cultivation (I, II, III) (uncommon)
+### Cultivation (I, II, III)
+
+**Rarity**: UNCOMMON
 
 Harvests fully grown crops in an area. The radius depends on the enchantment level. (final hoe upgrade i swear)
 
