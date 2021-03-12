@@ -42,13 +42,13 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 
 <hr>
 
-<img src="assets/icons/assets/icons/pi.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/sh.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/ax.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/ho.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/sw.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/bo.png" align="right" width="30px" height="auto">
-<img src="assets/icons/assets/icons/cr.png" align="right" width="30px" height="auto">
+<img src="assets/icons/pi.png" align="right" width="30px" height="auto">
+<img src="assets/icons/sh.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ax.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ho.png" align="right" width="30px" height="auto">
+<img src="assets/icons/sw.png" align="right" width="30px" height="auto">
+<img src="assets/icons/bo.png" align="right" width="30px" height="auto">
+<img src="assets/icons/cr.png" align="right" width="30px" height="auto">
 
 ### Magnetism (very rare)
 
