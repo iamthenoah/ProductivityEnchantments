@@ -7,8 +7,10 @@
 </p>
 
 
-Enchantments
----------------
+
+<img src="assets/enchantments.png" width="100%" height="auto">
+
+
 
 <img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 
@@ -81,8 +83,9 @@ Harvests fully grown crops in an area. The radius depends on the enchantment lev
 
 
 
-FAQ
----------------
+<img src="assets/faq.png" width="100%" height="auto">
+
+
 
 ### Mod compatibility?
 
