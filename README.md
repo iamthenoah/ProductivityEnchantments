@@ -132,6 +132,7 @@ Absolutely, please reach out to me in private!
 ## Extra
 
 
+#### Supports *JEI Enchantment Info*
 #### Supported Languages:
 
 * English
