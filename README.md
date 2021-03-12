@@ -1,6 +1,7 @@
 
 ![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/assets/title.png)
 
+<br>
 
 <p align="center">
     As the title suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like <b>farming</b>, <b>mining</b> and even <b>terraforming</b> while not being too <i>overpowered</i>. 
@@ -8,7 +9,7 @@
 
 
 
-<img src="assets/enchantments.png" width="100%" height="auto">
+<br></br><img src="assets/enchantments.png" width="100%" height="auto">
 
 
 
@@ -83,7 +84,7 @@ Harvests fully grown crops in an area. The radius depends on the enchantment lev
 
 
 
-<img src="assets/faq.png" width="100%" height="auto">
+<br></br><img src="assets/faq.png" width="100%" height="auto">
 
 
 
