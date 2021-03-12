@@ -1,5 +1,5 @@
 
-![Productivity Enchantments Mod](https://i.ibb.co/XScrS2Z/title.png)
+![Productivity Enchantments Mod](assets/title.png)
 
 
 
