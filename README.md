@@ -1,15 +1,15 @@
 
-![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/_productvity%20logo.jpg)
+![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/assets/title.png)
 
 
 <p style="text-align:center;">
-As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like **farming**, **mining** and even **terraforming** while not being too *overpowered*. 
+    As the name suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like **farming**, **mining** and even **terraforming** while not being too *overpowered*. 
 </p>
 
 Enchantments
 ---------------
 
-<img src="pi.png" align="right" width="30px" height="auto">
+<img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 
 ### Cluster (rare)
 
@@ -17,8 +17,8 @@ Simply mines complete veins of the same ore type. Bigger veins have a greater im
 
 <hr>
 
-<img src="pi.png" align="right" width="30px" height="auto">
-<img src="sh.png" align="right" width="30px" height="auto">
+<img src="assets/icons/pi.png" align="right" width="30px" height="auto">
+<img src="assets/icons/sh.png" align="right" width="30px" height="auto">
 
 ### Digging (I, II, III) (uncommon)
 
@@ -26,7 +26,7 @@ Carves an area of blocks. The radius depends on the enchantment level.
 
 <hr>
 
-<img src="pi.png" align="right" width="30px" height="auto">
+<img src="assets/icons/pi.png" align="right" width="30px" height="auto">
 
 ### Torching (uncommon)
 
@@ -34,7 +34,7 @@ Useful when mining. When enchanted, torches can be placed upon right click.
 
 <hr>
 
-<img src="ax.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ax.png" align="right" width="30px" height="auto">
 
 ### Woodcutting (I, II, III) (common)
 
@@ -42,13 +42,13 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 
 <hr>
 
-<img src="pi.png" align="right" width="30px" height="auto">
-<img src="sh.png" align="right" width="30px" height="auto">
-<img src="ax.png" align="right" width="30px" height="auto">
-<img src="ho.png" align="right" width="30px" height="auto">
-<img src="sw.png" align="right" width="30px" height="auto">
-<img src="bo.png" align="right" width="30px" height="auto">
-<img src="cr.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/pi.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/sh.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/ax.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/ho.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/sw.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/bo.png" align="right" width="30px" height="auto">
+<img src="assets/icons/assets/icons/cr.png" align="right" width="30px" height="auto">
 
 ### Magnetism (very rare)
 
@@ -56,7 +56,7 @@ Attracts any droped items directly to you. Your best friend for mining over lava
 
 <hr>
 
-<img src="ho.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
 ### Plowing (I, II, III) (common)
 
@@ -64,7 +64,7 @@ Plows an area into farmland. Max enchantment will also fully moisturize fields. 
 
 <hr>
 
-<img src="ho.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
 ### Fertility (I, II, III) (common)
 
@@ -72,7 +72,7 @@ Allows seeds to be planted or bone meal to be fed on crops over an area upon rig
 
 <hr>
 
-<img src="ho.png" align="right" width="30px" height="auto">
+<img src="assets/icons/ho.png" align="right" width="30px" height="auto">
 
 ### Cultivation (I, II, III) (uncommon)
 
