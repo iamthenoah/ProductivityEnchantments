@@ -65,6 +65,7 @@ Cuts down entire trees. This enchantment also behaves like digging on all wood-t
 ### Magnetism
 
 **Rarity**: VERY RARE
+
 Attracts any droped items directly to you. Your best friend for mining over lava or killing flying blazes.
 
 <hr>
@@ -84,6 +85,7 @@ Plows an area into farmland. Max enchantment will also fully moisturize fields. 
 ### Fertility (I, II, III)
 
 **Rarity**: COMMON
+
 Allows seeds to be planted or bone meal to be fed on crops over an area upon right click. The radius depends on the enchantment level.
 
 <hr>
