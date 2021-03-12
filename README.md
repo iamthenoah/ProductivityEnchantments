@@ -131,7 +131,7 @@ Do not report in the comment section directly, report them here: https://github.
 <br>
 
 
-## Extra
+<br></br><img src="assets/extra.png" width="100%" height="auto">
 
 
 #### Supports *JEI Enchantment Info*
