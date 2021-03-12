@@ -2,9 +2,10 @@
 ![Productivity Enchantments Mod](https://github.com/noahgreff/ProductivityEnchantments/blob/master/assets/title.png)
 
 
-<p align="center" style="font-size: 20px;">
+<p align="center">
     As the title suggests, this mod adds 8 vanilla-like enchantments aiming at increasing your productivity by helping you complete tedious tasks like <b>farming</b>, <b>mining</b> and even <b>terraforming</b> while not being too <i>overpowered</i>. 
 </p>
+
 
 Enchantments
 ---------------
@@ -96,6 +97,7 @@ Feel free to you use this mod however you like (please infrom me of any issues/i
 ### Will this mod be available in other versions?
 
 As it stands, if I have the time, I may be able to work on other versions such as 1.12.2. Please leave a comment on which version you would like this mod to be available in.
+
 
 #### Feel free to suggest anything in the comments section.
 
