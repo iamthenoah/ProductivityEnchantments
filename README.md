@@ -141,6 +141,6 @@ Do not report in the comment section directly, report them here: https://github.
 * English
 
 
-#### Feel free to suggest anything in the comments section.
+#### Feel free to suggest anything in the comment section.
 
 #### Don't forget to check out the mod's configs to adjust things to your liking.
